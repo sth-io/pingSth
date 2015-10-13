@@ -1,0 +1,44 @@
+.icons {
+    display: inline-block;
+    .dims-rem(70, 70);
+    .background-size(cover);
+    &.i-add {
+        background-image: url('/assets/img/icons/add.svg');
+    }
+}
+.icon {
+    display: inline-block;
+    .dims-rem(48, 48);
+    .background-size(cover);
+    &.i-text {
+        background-image: url('/assets/img/icons/text.svg');
+    }
+    &.i-list {
+        background-image: url('/assets/img/icons/list.svg');
+    }
+    &.i-add {
+        .dims-rem(300,300);
+        background-image: url('/assets/img/icons/add_bw.svg');
+    }
+}
+
+.status {
+  position: absolute;
+  bottom:10px;
+  right:10px;
+  display: block;
+  .dims-rem(60, 60);
+  .background-size(cover);
+
+  &.s-true {
+    background-image: url('/assets/img/icons/ok.svg');
+  }
+  &.s-false {
+    background-image: url('/assets/img/icons/bad.svg');
+
+  }
+  &.s-waiting {
+    background-image: url('/assets/img/icons/waiting.svg');
+
+  }
+}

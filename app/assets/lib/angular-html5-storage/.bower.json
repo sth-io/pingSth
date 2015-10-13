@@ -1,0 +1,43 @@
+{
+  "name": "angular-html5-storage",
+  "version": "0.0.5",
+  "authors": [
+    "Anthony Ettinger (chovy) <anthony@chovy.com>",
+    "Simon Ho (superkhau) <superkhau@gmail.com>"
+  ],
+  "description": "HTML5 web storage for Angular.js (ngHTML5Storage)",
+  "main": "dist/angular-html5-storage.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "angularjs",
+    "angular",
+    "html5",
+    "localStorage",
+    "sessionStorage",
+    "webstorage",
+    "ngHTML5Storage"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/chovy/angular-html5-storage",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.1"
+  },
+  "_release": "0.0.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.5",
+    "commit": "0a175a9cae3f8548494e8fcb0826d54a2242d75d"
+  },
+  "_source": "git://github.com/chovy/angular-html5-storage.git",
+  "_target": "0.0.5",
+  "_originalSource": "angular-html5-storage"
+}

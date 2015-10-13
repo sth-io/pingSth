@@ -1,0 +1,10 @@
+<div ng-controller="websites">
+    Add a website
+    <input type="text" ng-model="website.body.website">
+    <input type="text" ng-model="website.body.timeout">
+
+    <div class="text-right buttons">
+        <div ng-click="website.send(); callmodal()" class="btn btn-g">add new website</div>
+        <div class="btn right" ng-click="callmodal()">cancel</div>
+    </div>
+</div>
