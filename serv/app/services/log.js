@@ -10,10 +10,10 @@ Log.prototype = {
     data.timestamp = new Date();
     var status = new Status(data)
     if (data.status == 0) {
-      Status.findOne({website: data.webstie}, function(err, last) {
+      console.log(data.website);
+      Status.findOne({website: data.website},{},{ sort: { 'timestamp' : -1 } }, function(err, last) {
         // if its first error
-        if(last && last.status == 1) {
-          console.log('mail went')
+        if(last && last.status == 1 || !last) {
           Email('error', data);
         }
 

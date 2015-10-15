@@ -18,18 +18,18 @@ handler = {
     'error': function(data) {
       // setup e-mail data with unicode symbols
       var mailOptions = {
-          from: 'PingSth ✔ <PingSth@gmail.com>', // sender address
+          from: '« PingSth <pingsth@gmail.com>', // sender address
           to: 'krzysztofweglinski@gmail.com', // list of receivers
-          subject: 'PingSth Alert', // Subject line
-          text: 'Your website' + data.website + 'has broke down', // plaintext body
-          html: '<h1>Your website' + data.website + '</h1> <p>has broke down</p>' // html body
+          subject: '[PingSth] Website Alert', // Subject line
+          text: 'Your website ' + data.website + ' has broke down', // plaintext body
+          html: '<h1>Your website alarm</h1> <p><a href="' + data.website + '">' + data.website + '</a> is not accesible through ping.</p>' // html body
       };
 
       transporter.sendMail(mailOptions, function(error, info){
           if(error){
               return console.log(error);
           }
-          console.log('Message sent: ' + info.response);
+          console.log('✔ Message sent. Response:'.cyan + info.response);
 
       });
     }

@@ -2,15 +2,17 @@ var statusCodes = require('http').STATUS_CODES,
     request = require('request'),
     Log = require('./log'),
     Website = require('../models/website'),
-    Screenshot = require('./screenshot');
+    Screenshot = require('./screenshot'),
+    colors = require('colors');
 
 function Ping(opts) {
   this.website = '';
   this.timeout = 15;
   this.handle = null;
-  console.log("Started pinging");
+  console.log("---------------".yellow);
+  console.log("Started pinging".green);
   console.log(opts);
-  console.log("---------------");
+  console.log("---------------".yellow);
   this.init(opts);
 }
 
@@ -35,7 +37,6 @@ Ping.prototype = {
   start: function() {
     var self = this,
       time = Date.now();
-    console.log("\nLoading... " + self.website + "\nTime: " + time + "\n");
     // create an interval for pings
     self.handle = setInterval(function() {
       Website.findOne({website: self.website}, function(err, web) {
@@ -90,7 +91,11 @@ Ping.prototype = {
     output += "\nTime: " + time;
     output += "\nStatus: " + status;
     output += "\nMessage:" + msg + "\n";
-    console.log(output);
+    if(status == 1) {
+      console.log(output.green);
+    } else {
+      console.log(output.red);
+    }
     var log = {};
     log.website = self.website;
     log.status = status;

@@ -10,6 +10,7 @@
     "jsonwebtoken": "~5.0.4",
     "morgan": "~1.6.1",
     "nodemailer": "~1.8.0",
-    "webshot": "0.16.0"
+    "webshot": "0.16.0",
+    "colors": "~1.1.2"
   }
 }
