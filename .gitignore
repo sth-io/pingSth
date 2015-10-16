@@ -28,3 +28,4 @@ node_modules
 
 lib
 app/assets/lib
+serv/app/screens/
