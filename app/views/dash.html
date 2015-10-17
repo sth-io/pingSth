@@ -1,26 +1,30 @@
 <div class="container" ng-show="notes.length == 0">
-    <div class="row">
-        <div class="cta-note" ng-click="callmodal('addnote')">
-            <i class="icon i-add"></i>
-            <h2>You don't have any notes yet.</h2>
-            <p>Click here to add a new note!</p>
-        </div>
+  <div class="row">
+    <div class="cta-note" ng-click="callmodal('addnote')">
+      <i class="icon i-add"></i>
+      <h2>You don't have any notes yet.</h2>
+      <p>Click here to add a new note!</p>
     </div>
+  </div>
 </div>
 <div class="container">
-    <div class="row">
-        <div class="col-md-12" ng-repeat="web in websites track by $index">
-            <div class="box row">
-                <!-- <div class="col-md-7">
+  <div class="row">
+    <div class="col-md-12" ng-repeat="web in websites track by $index">
+      <div class="box row" ng-class="{'box-red': getStat(web.website).status == false, 'box-sand': getStat(web.website).status == null}">
+        <!-- <div class="col-md-7">
                   <img src="{{server + web.website.substr(web.website.indexOf('://')+3, web.website.length)}}.png" alt="">
                 </div> -->
-                <div class="col-md-12">
-                  <h2>{{web.website.substr(web.website.indexOf('://')+3, web.website.length)}}</h2>
-                  <p> timeout: {{web.timeout}} min <br />
-                      server up: {{getStat(web.website)}}</p>
-                </div>
-                  <i class="status" ng-class="{'s-false': getStat(web.website) == false, 's-true': getStat(web.website) == true, 's-waiting': getStat(web.website) == null}"></i>
-            </div>
+        <div class="col-md-2">
+          <h2>{{web.website.substr(web.website.indexOf('://')+3, web.website.length)}}</h2>
+          <p> timeout: {{web.timeout}} min
+            <br /> response time: {{getStat(web.website).response}}ms</p>
         </div>
+        <div class="col-md-10">
+          <div ng-if="getStat(web.website).status"  data-ac-chart="'line'" data-ac-data="responses[web.website]"  class="chart">
+          </div>
+        </div>
+        <i class="status" ng-class="{'s-false': getStat(web.website).status == false, 's-true': getStat(web.website).status == true, 's-waiting': getStat(web.website).status == null}"></i>
+      </div>
     </div>
+  </div>
 </div>

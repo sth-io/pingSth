@@ -79,6 +79,8 @@ Ping.prototype = {
     }
   },
   isOk: function(ct) {
+    var time = Date.now();
+    ct = time - ct;
     this.log(1, 'OK', ct);
   },
   isNotOk: function(statusCode) {
@@ -108,7 +110,7 @@ Ping.prototype = {
     log.website = self.website;
     log.status = status;
     if(ct) {
-      log.response = time - ct;
+      log.response = ct;
     }
     console.log(log.response);
     new Log(log)

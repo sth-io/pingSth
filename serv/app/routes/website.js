@@ -26,7 +26,7 @@ var notoken = function(res) {
           if(data) {
           Status.findOne({website: data.website},{},{ sort: { 'timestamp' : -1 } }, function(err, status) {
             console.log(status);
-            res.status(200).json({website:status});
+            res.status(200).json(status);
           })
         } else {
           res.status(200);

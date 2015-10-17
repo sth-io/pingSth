@@ -5,5 +5,8 @@
     "angular-route": "~1.4.0",
     "angular-html5-storage": "0.0.5",
     "angular-local-storage": "~0.2.2"
+  },
+  "devDependencies": {
+    "angular-charts": "~0.2.7"
   }
 }

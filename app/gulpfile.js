@@ -35,7 +35,9 @@ gulp.task('concat-lib', function() {
     return gulp.src([
         './assets/lib/angular/angular.min.js',
         './assets/lib/angular-route/angular-route.min.js',
-        './assets/lib/angular-local-storage/dist/angular-local-storage.min.js'
+        './assets/lib/angular-local-storage/dist/angular-local-storage.min.js',
+        './assets/lib/d3/d3.min.js',
+        './assets/lib/angular-charts/dist/angular-charts.min.js'
     ])
         .pipe(plumber())
         .pipe(concat('notesth-lib.min.js'))

@@ -1,6 +1,7 @@
 angular.module('noteSth', [
     'ngRoute',
-    'LocalStorageModule'
+    'LocalStorageModule',
+    'angularCharts'
 ])
 .config(function($routeProvider, $locationProvider) {
     $routeProvider
