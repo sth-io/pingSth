@@ -7,7 +7,11 @@ var websiteSchema = new mongoose.Schema({
     website: String,
     timeout: Number,
     pinging: Number,
-    owner: String
+    owner: String,
+    up: Number,
+    down: Number,
+    total: Number,
+    edit: Date
 })
 
 // // create the model for users and expose it

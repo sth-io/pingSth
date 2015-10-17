@@ -1,9 +1,9 @@
 var statusCodes = require('http').STATUS_CODES,
-    request = require('request'),
-    Log = require('./log'),
-    Website = require('../models/website'),
-    Screenshot = require('./screenshot'),
-    colors = require('colors');
+  request = require('request'),
+  Log = require('./log'),
+  Website = require('../models/website'),
+  Screenshot = require('./screenshot'),
+  colors = require('colors');
 
 function Ping(opts) {
   this.website = '';
@@ -24,13 +24,19 @@ Ping.prototype = {
     self.website = opts.website;
     self.timeout = (opts.timeout * 60000);
     new Screenshot(self.website);
-    Website.findOne({website: self.website}, function(err, web) {
-        if(web.pinging !== 1) {
-          Website.update({website: self.website}, { pinging: 1 }, function(err, data) {
-            // updated, now start
-            self.start();
-          });
-        }
+    Website.findOne({
+      website: self.website
+    }, function(err, web) {
+      if (web.pinging !== 1) {
+        Website.update({
+          website: self.website
+        }, {
+          pinging: 1
+        }, function(err, data) {
+          // updated, now start
+          self.start();
+        });
+      }
     });
   },
 
@@ -39,10 +45,12 @@ Ping.prototype = {
       time = Date.now();
     // create an interval for pings
     self.handle = setInterval(function() {
-      Website.findOne({website: self.website}, function(err, web) {
-          if(web) {
-            self.ping();
-          }
+      Website.findOne({
+        website: self.website
+      }, function(err, web) {
+        if (web) {
+          self.ping();
+        }
       });
     }, self.timeout);
   },
@@ -76,7 +84,7 @@ Ping.prototype = {
   isNotOk: function(statusCode) {
     var time = Date.now(),
       self = this
-      msg = statusCodes[statusCode + ''],
+    msg = statusCodes[statusCode + ''],
       htmlMsg = '<p>Time: ' + time;
     htmlMsg += '</p><p>Website: ' + self.website;
     htmlMsg += '</p><p>Message: ' + msg + '</p>';
@@ -91,7 +99,7 @@ Ping.prototype = {
     output += "\nTime: " + time;
     output += "\nStatus: " + status;
     output += "\nMessage:" + msg + "\n";
-    if(status == 1) {
+    if (status == 1) {
       console.log(output.green);
     } else {
       console.log(output.red);
