@@ -57,13 +57,13 @@ Ping.prototype = {
 
   ping: function() {
     var self = this,
-      currentTime = Date.now();
+      ct = Date.now();
     try {
       // send request
       request(self.website, function(error, res, body) {
         // Website is up
         if (!error && res.statusCode === 200) {
-          self.isOk();
+          self.isOk(ct);
         }
         // No error but website not ok
         else if (!error) {
@@ -78,8 +78,8 @@ Ping.prototype = {
       self.isNotOk();
     }
   },
-  isOk: function() {
-    this.log(1, 'OK');
+  isOk: function(ct) {
+    this.log(1, 'OK', ct);
   },
   isNotOk: function(statusCode) {
     var time = Date.now(),
@@ -91,7 +91,7 @@ Ping.prototype = {
     this.log(0, msg);
 
   },
-  log: function(status, msg) {
+  log: function(status, msg, ct) {
     var self = this,
       time = Date.now(),
       output = '';
@@ -107,6 +107,10 @@ Ping.prototype = {
     var log = {};
     log.website = self.website;
     log.status = status;
+    if(ct) {
+      log.response = time - ct;
+    }
+    console.log(log.response);
     new Log(log)
   }
 }

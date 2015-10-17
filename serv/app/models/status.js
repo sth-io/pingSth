@@ -6,7 +6,8 @@ var mongoose = require('mongoose')
 var statusSchema = new mongoose.Schema({
     website: String,
     status: Boolean,
-    timestamp: Date
+    timestamp: Date,
+    response: Number
 })
 
 // // create the model for users and expose it

@@ -9,12 +9,12 @@
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-md-4" ng-repeat="web in websites track by $index">
+        <div class="col-md-12" ng-repeat="web in websites track by $index">
             <div class="box row">
-                <div class="col-md-7">
+                <!-- <div class="col-md-7">
                   <img src="{{server + web.website.substr(web.website.indexOf('://')+3, web.website.length)}}.png" alt="">
-                </div>
-                <div class="col-md-5">
+                </div> -->
+                <div class="col-md-12">
                   <h2>{{web.website.substr(web.website.indexOf('://')+3, web.website.length)}}</h2>
                   <p> timeout: {{web.timeout}} min <br />
                       server up: {{getStat(web.website)}}</p>
