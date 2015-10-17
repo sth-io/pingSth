@@ -23,16 +23,22 @@ app.controller('dashboard', ['$scope', 'dataS', 'localStorageService', '$locatio
               $scope.responses[data.website]['series'] = [''];
 
             }
+
             if (data && data.hasOwnProperty('website')) {
               $scope.statuses.push(data);
               $scope.responses[data.website]['data'].push({x: indexes, y: [data.response]});
               indexes++;
+
+              if($scope.responses[data.website]['data'].length >= 25) {
+                $scope.responses[data.website]['data'].splice(0,5);
+
+              }
             }
           })
       }
       setTimeout(function() {
         status()
-      }, 5000);
+      }, 10000);
     }
 
     $scope.getStat = function(ele) {
