@@ -19,9 +19,14 @@
           <p> timeout: {{web.timeout}} min
             <br /> response time: {{getStat(web.website).response}}ms</p>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-8">
+          <p class="data">response time [ms]</p>
           <div ng-if="getStat(web.website).status"  data-ac-chart="'line'" data-ac-data="responses[web.website]"  class="chart">
           </div>
+        </div>
+        <div class="col-md-2">
+          <p class="data">uptime [%] <span class="leg-b">up</span> <span class="leg-g">down</span></p>
+          <div ng-if="charts[web.website].data" data-ac-chart="'pie'" data-ac-data="charts[web.website]" class="pie-chart"></div>
         </div>
         <i class="status" ng-class="{'s-false': getStat(web.website).status == false, 's-true': getStat(web.website).status == true, 's-waiting': getStat(web.website).status == null}"></i>
       </div>
