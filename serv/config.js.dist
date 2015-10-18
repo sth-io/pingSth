@@ -1,23 +1,30 @@
 // SERVER CONFIG
 // MongoDB setup
 var db = {
-    dbUser: 'monitorSth',
-    dbPassword: 'test',
-    dbName: 'monitorSth',
+    dbUser: 'dbuser',
+    dbPassword: 'passwordforuse',
+    dbName: 'databasename',
     dbHost: 'localhost',
     dbPort: '27017'
-}; 
-var server = {
+},
+// server setup
+server = {
     port: '4000',
-    secret: 'EverythingStartsOutOfSth'
+    secret: 'yourssecret'
+},
+// mailer setup
+mail = {
+  email: 'sample@gmail.com',
+  password: 'yourpass',
+  type: 'gmail'
 }
 
 module.exports = {
     // port at which server listens
-	port: server.port,
+	  port: server.port,
     dbUrl: 'mongodb://'+db.dbUser+':'+db.dbPassword+'@'+db.dbHost+':'+db.dbPort+'/'+db.dbName,
     secret: server.secret
-
+    mail: mail
 };
 
 // db.createUser( { user: "noteSth", pwd: "test", roles: [ { role: "readWrite", db: "noteSth" } ] } )
