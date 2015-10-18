@@ -2,20 +2,15 @@ var Ping = require('./ping'),
   Website = require('../models/website'),
   cron = require('cron'),
   exec = require('child_process').exec;
-  exec('node tasks/batchStatus/init.js', function(error, stdout, stderr) {
-    console.log('stdout: ' + stdout);
-    console.log('stderr: ' + stderr);
-    if (error !== null) {
-        console.log('exec error: ' + error);
-    }
+
+exec('node tasks/batchStatus/init.js', function(error, stdout, stderr) {
+  console.log('stdout: ' + stdout);
+  console.log('stderr: ' + stderr);
+  if (error !== null) {
+    console.log('exec error: ' + error);
+  }
 });
 
-
-  // var batchParse = cron.job('00 30 2 * * 0-6', function(){
-  //     // perform operation e.g. GET request http.get() etc.
-  //
-  // });
-  // batchParse.start();
 
 function Init() {
   // todo: cache websites

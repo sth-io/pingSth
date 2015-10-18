@@ -2,10 +2,10 @@ var nodemailer = require('nodemailer'),
   config = require('../../config');
 // create reusable transporter object using SMTP transport
 var transporter = nodemailer.createTransport({
-  service: config.email.type,
+  service: config.mail.type,
   auth: {
-    user: config.email.user,
-    pass: config.email.password
+    user: config.mail.user,
+    pass: config.mail.password
   }
 });
 

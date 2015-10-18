@@ -2,7 +2,7 @@ var check = require('./../functions/checkReqKeys'),
     User = require('./../models/user'),
     bcrypt = require('bcrypt-nodejs'),
     app = require('../../app'),
-        
+
     reqKey = {
         'email': 'email',
         'password': 'string'
@@ -84,7 +84,8 @@ module.exports = {
                     res.json({
                         success: true,
                         message: 'Enjoy your token!',
-                        token: token
+                        token: token,
+                        id: user._id
                     });
                 }
 

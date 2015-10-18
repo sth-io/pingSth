@@ -1,7 +1,10 @@
 <div ng-controller="websites">
     Add a website
-    <input type="text" ng-model="website.body.website">
-    <input type="text" ng-model="website.body.timeout">
+    <input type="text" ng-model="website.body.website" placeholder="http://sample.com">
+    <input type="text" ng-model="website.body.timeout" placeholder="time in minutes ex. 1">
+    <h3 class="codes">Before continuing, please make sure You've added detect code on your website.</h3>
+      <p class="detect-code">&lt;div pingsth=&quot;<span>{{id}}</span>&quot; style=&quot;display:none&quot;&gt;&lt;/div&gt;</p>
+
 
     <div class="text-right buttons">
         <div ng-click="website.send(); callmodal()" class="btn btn-g">add new website</div>

@@ -23,7 +23,7 @@ module.exports = {
     // port at which server listens
 	  port: server.port,
     dbUrl: 'mongodb://'+db.dbUser+':'+db.dbPassword+'@'+db.dbHost+':'+db.dbPort+'/'+db.dbName,
-    secret: server.secret
+    secret: server.secret,
     mail: mail
 };
 

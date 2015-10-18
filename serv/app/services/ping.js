@@ -61,6 +61,7 @@ Ping.prototype = {
     try {
       // send request
       request(self.website, function(error, res, body) {
+        console.log(body);
         // Website is up
         if (!error && res.statusCode === 200) {
           self.isOk(ct);
