@@ -11,6 +11,7 @@ app.controller('dashboard', ['$scope', 'dataS', 'localStorageService', '$locatio
           getXRecords(20, $scope.websites[i]);
           new Status($scope.websites[i]);
           fillChart($scope.websites[i]);
+          updateUptime();
         }
       })
     $scope.statuses = [];
@@ -32,6 +33,19 @@ app.controller('dashboard', ['$scope', 'dataS', 'localStorageService', '$locatio
         $scope.charts[wb.website]['data'] = null;
       }
       indexes++;
+    }
+
+    function updateUptime() {
+      dataS.getData('/websites', true)
+        .success(function(data) {
+          $scope.websites = data;
+          for (var i = 0, len = $scope.websites.length; i < len; i++) {
+            fillChart($scope.websites[i]);
+          }
+        })
+        setTimeout(function() {
+          updateUptime()
+        },  10 * 60 * 1000);
     }
 
     function Status(website) {
