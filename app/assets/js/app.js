@@ -1,7 +1,7 @@
 angular.module('noteSth', [
     'ngRoute',
-    'LocalStorageModule',
-    'angularCharts'
+    'angularCharts',
+    'ngCookies'
 ])
 .config(function($routeProvider, $locationProvider) {
     $routeProvider

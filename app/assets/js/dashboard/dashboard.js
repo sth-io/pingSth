@@ -1,7 +1,7 @@
 var app = angular.module('noteSth');
-app.controller('dashboard', ['$scope', 'dataS', 'localStorageService', '$location', '$rootScope', 'config',
+app.controller('dashboard', ['$scope', 'dataS', '$cookieStore', '$location', '$rootScope', 'config',
 
-  function($scope, dataS, localStorageService, $location, $rootScope, config) {
+  function($scope, dataS, $cookieStore, $location, $rootScope, config) {
     dataS.getData('/websites', true)
       .success(function(data) {
         $scope.websites = data;

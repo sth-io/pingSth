@@ -1,9 +1,9 @@
-angular.module('noteSth').service('dataS',  function ($http, config, localStorageService) {
+angular.module('noteSth').service('dataS',  function ($http, config, $cookieStore) {
     var headers = function(token) {
         if(token) {
             return {
                 'Content-type': 'application/json',
-                'x-access-token': localStorageService.get('token')
+                'x-access-token': $cookieStore.get('token')
             }
         } else {
             return {

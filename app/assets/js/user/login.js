@@ -1,14 +1,14 @@
 var app = angular.module('noteSth');
-app.controller('login', ['$scope', 'dataS', 'localStorageService', '$location',
+app.controller('login', ['$scope', 'dataS', '$cookieStore', '$location',
 
-    function($scope, dataS, localStorageService, $location) {
+    function($scope, dataS, $cookieStore, $location) {
 
         $scope.logindo = function() {
                 dataS.postData('/auth', $scope.login)
                 .success(function(data) {
                     if(data.token) {
-                        localStorageService.set('token', data.token);
-                        localStorageService.set('id', data.id);
+                        $cookieStore.put('token', data.token);
+                        $cookieStore.put('id', data.id);
                         $location.path('/dash');
                     }
                 })

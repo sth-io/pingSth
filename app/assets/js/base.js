@@ -1,8 +1,8 @@
 var app = angular.module('noteSth');
-app.controller('base', ['$scope', 'dataS', 'localStorageService', '$location',
+app.controller('base', ['$scope', 'dataS', '$cookieStore', '$location',
 
-    function($scope, dataS, localStorageService, $location) {
-       var token = localStorageService.get('token');
+    function($scope, dataS, $cookieStore, $location) {
+       var token = $cookieStore.get('token');
         if(token && token.length > 2) {
            dataS.getData('/user', token)
            .success(function(data){
