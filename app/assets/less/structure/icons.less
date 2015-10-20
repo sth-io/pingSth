@@ -25,7 +25,7 @@
 .status {
   position: absolute;
   top:50%;
-  margin-top: -20px;
+  margin-top: -45px;
   left:20px;
   display: block;
   .dims(40px, 40px);
@@ -40,6 +40,28 @@
   }
   &.s-waiting {
     background-image: url('/assets/img/icons/waiting.svg');
+
+  }
+}
+.opts {
+  position: relative;
+  // .padd(0,0,0,30);
+  &:before {
+    position: absolute;
+    top:50%;
+    margin-top: -8px;
+    left:5px;
+    display: block;
+    .dims(16px, 16px);
+    .background-size(cover);
+    content: "";
+  }
+  &.o-edit:before {
+    background-image: url('/assets/img/icons/edit.svg');
+
+  }
+  &.o-del:before {
+    background-image: url('/assets/img/icons/delete.svg');
 
   }
 }

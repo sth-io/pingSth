@@ -476,3 +476,42 @@ p.data {
     }
   }
 }
+
+.setup {
+  position: absolute;
+  top:50%;
+  margin-top: 10px;
+  left:20px;
+  display: block;
+  .dims(40px, 40px);
+  .background-size(40px 40px);
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  .transition(opacity 0.2s);
+  background-image: url('/assets/img/icons/setting.svg');
+  // .padd(0,0,0,60);
+  li {
+    display: none;
+    z-index: 900;
+    position: relative;
+    .padd(5,0,5,5);
+  }
+
+  &:hover {
+    opacity: 1;
+    min-width: 300px;
+    li {
+      display: inline-block;
+      height: 40px;
+      line-height: 40px;
+      span {
+        .padd(5,10,5,35);
+        &:hover {
+          cursor: pointer;
+          border-radius: 4px;
+          background: #d9d9d9;
+        }
+      }
+    }
+  }
+}
