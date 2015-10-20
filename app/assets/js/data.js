@@ -38,9 +38,7 @@ angular.module('noteSth').service('dataS',  function ($http, config, $cookieStor
         delData: function (url, hash, token) {
             return $http({
                 method: 'DELETE',
-                data: {
-                    hash: hash
-                },
+                data: hash,
                 url: config.API + url,
                 headers: headers(token)
             });

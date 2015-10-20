@@ -9,7 +9,7 @@ app.controller('websites', ['$scope', 'dataS', '$cookieStore', '$location', '$ro
            send: function() {
                dataS.postData('/websites', $scope.website.body, true)
                .success(function(data) {
-                   $rootScope.$emit('noteAdd', data);
+                   $rootScope.$emit('siteAdd', data);
                })
            }
        }

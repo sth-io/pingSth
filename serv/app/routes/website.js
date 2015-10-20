@@ -81,10 +81,51 @@ apiRoutes.route('/websites')
       }
     })
   })
+  .delete(function(req, res) {
+    auth(req, function(cb) {
+      if (cb) {
+        Websites.findOne({
+          website: req.body.website
+        }, function(err, web) {
+
+          if (web !==null && web.owner.indexOf(cb.email) > -1) {
+            web.remove(function(err, data){
+              res.status(200).json('website removed');
+            });
+          } else {
+            res.status(412).json('You are not owner or website does not exist');
+          }
+        })
+
+      } else {
+        notoken(res);
+      }
+    })
+  })
+  .put(function(req,res) {
+    auth(req, function(cb) {
+      if (cb) {
+        Websites.findOne({
+          website: req.body.website
+        }, function(err, web) {
+          if (web !==null && web.owner.indexOf(cb.email) > -1) {
+            web.timeout = req.body.timeout;
+            web.save(function (err) {
+              res.status(200).json('success');
+            });
+          } else {
+            res.status(412).json('You are not owner or website does not exist');
+          }
+        });
+      } else {
+        notoken(res);
+      }
+    });
+  })
   .post(function(req, res) {
     auth(req, function(cb) {
       if (cb) {
-        request(req.body.website, function(error, res, body) {
+        request(req.body.website, function(error, response, body) {
           if (body) {
             var ison = body.indexOf('<div pingsth="' + cb._id + '" style="display:none"></div>');
             if (ison >= 0) {
@@ -93,11 +134,15 @@ apiRoutes.route('/websites')
               }, function(err, webs) {
                 if (webs) {
                   var owners = webs.owner;
-                  if( Object.prototype.toString.call( owners ) !== '[object Array]' ) {
-                    owners = [ owners ];
+                  if (Object.prototype.toString.call(owners) !== '[object Array]') {
+                    owners = [owners];
                   }
                   owners.push(cb.email);
-                  Websites.update({website: req.body.website}, {owner: owners}, function(err, data) {
+                  Websites.update({
+                    website: req.body.website
+                  }, {
+                    owner: owners
+                  }, function(err, data) {
                     res.status(200).json(data);
                   })
                 } else {
@@ -112,7 +157,7 @@ apiRoutes.route('/websites')
                 }
               })
             } else {
-              res.status(412).json('Code not detected. Add it to your website. '+'<div pingsth="' + cb._id + '" style="display:none"></div>');
+              res.status(412).json('Code not detected. Add it to your website. ' + '<div pingsth="' + cb._id + '" style="display:none"></div>');
             }
           }
         })

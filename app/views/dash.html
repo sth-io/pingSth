@@ -29,8 +29,8 @@
           <div ng-if="charts[web.website].data" data-ac-chart="'pie'" data-ac-data="charts[web.website]" class="pie-chart"></div>
         </div>
         <ul class="setup">
-          <li><span class="opts o-edit">EDIT</span></li>
-          <li><span class="opts o-del">DEL</span></li>
+          <li><span class="opts o-edit" ng-click="sets.edit(web.website, $index)">EDIT</span></li>
+          <li><span class="opts o-del" ng-click="sets.delete(web.website, $index)">DEL</span></li>
         </ul>
         <i class="status" ng-class="{'s-false': getStat(web.website).status == false, 's-true': getStat(web.website).status == true, 's-waiting': getStat(web.website).status == null}"></i>
       </div>

@@ -98,7 +98,34 @@ app.controller('dashboard', ['$scope', 'dataS', '$cookieStore', '$location', '$r
       }
       return null;
     }
+    $scope.sets = {
+      delete: function(website, id) {
+        if(confirm('Are you sure you want to delete this item?')) {
+        dataS.delData('/websites', {'website':website}, true)
+        .success(function(data) {
+            $scope.websites.splice(id, 1);
+        })
+        }
+      },
+      edit: function(website, id) {
+        var time = prompt("Please enter timeout in MINUTES", "1");
+        if (time != null) {
+          dataS.editData('/websites', {'website':website, 'timeout': time}, true)
+          .success(function(data) {
+              $scope.websites[id].timeout = time;
+          })
+        }
+      }
+    }
     $scope.server = config.IMG + '/';
-
+    $rootScope.$on('siteAdd', function (event, data) {
+      // console.log(data); // 'Some data'
+      $scope.websites.push(data);
+      new Status(data);
+    });
   }
+
+
+
+
 ]);

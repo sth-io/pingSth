@@ -7,7 +7,7 @@ var websiteSchema = new mongoose.Schema({
     website: String,
     timeout: Number,
     pinging: Number,
-    owner: String,
+    owner: Object,
     up: Number,
     down: Number,
     total: Number,
