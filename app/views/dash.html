@@ -11,15 +11,12 @@
   <div class="row">
     <div class="col-md-12" ng-repeat="web in websites track by $index">
       <div class="box row" ng-class="{'box-red': getStat(web.website).status == false, 'box-sand': getStat(web.website).status == null}">
-        <!-- <div class="col-md-7">
-                  <img src="{{server + web.website.substr(web.website.indexOf('://')+3, web.website.length)}}.png" alt="">
-                </div> -->
-        <div class="col-md-2">
+        <div class="col-md-1">
           <h2>{{web.website.substr(web.website.indexOf('://')+3, web.website.length)}}</h2>
           <p> timeout: {{web.timeout}} min
             <br /> response time: {{getStat(web.website).response}}ms</p>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-7">
           <p class="data">response time [ms]</p>
           <div ng-if="getStat(web.website).status"  data-ac-chart="'line'" data-ac-data="responses[web.website]"  class="chart">
           </div>
@@ -28,6 +25,7 @@
           <p class="data">uptime [%] <span class="leg-b">up</span> <span class="leg-g">down</span></p>
           <div ng-if="charts[web.website].data" data-ac-chart="'pie'" data-ac-data="charts[web.website]" class="pie-chart"></div>
         </div>
+        <div class="col-md-2 text-center"><img ng-src="{{server + web.website.substr(web.website.indexOf('://')+3, web.website.length)}}.png" class="screenshot" alt=""></div>
         <ul class="setup">
           <li><span class="opts o-edit" ng-click="sets.edit(web.website, $index)">EDIT</span></li>
           <li><span class="opts o-del" ng-click="sets.delete(web.website, $index)">DEL</span></li>
