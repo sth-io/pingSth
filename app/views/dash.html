@@ -9,23 +9,31 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-md-12" ng-repeat="web in websites track by $index">
+    <div class="col-md-6" ng-repeat="web in websites track by $index">
       <div class="box row" ng-class="{'box-red': getStat(web.website).status == false, 'box-sand': getStat(web.website).status == null}">
-        <div class="col-md-1">
+        <div class="col-md-3">
           <h2>{{web.website.substr(web.website.indexOf('://')+3, web.website.length)}}</h2>
-          <p> timeout: {{web.timeout}} min
-            <br /> response time: {{getStat(web.website).response}}ms</p>
+          <table>
+            <tr>
+              <td>timeout</td>
+              <td><b>{{web.timeout}}</b> min</td>
+            </tr>
+            <tr>
+              <td>response:</td>
+              <td><b>{{getStat(web.website).response}}</b> ms</td>
+            </tr>
+            <tr>
+              <td>screen:</td>
+              <td><a ng-href="{{server + web.website.substr(web.website.indexOf('://')+3, web.website.length)}}.png" target="_blank">[ click ]</a></td>
+            </tr>
+          </table>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-9">
           <p class="data">response time [ms]</p>
-          <div ng-if="getStat(web.website).status"  data-ac-chart="'line'" data-ac-data="responses[web.website]"  class="chart">
+          <div ng-if="getStat(web.website).status"  data-ac-chart="'line'" data-ac-config="chartconf" data-ac-data="responses[web.website]"  class="chart">
           </div>
         </div>
-        <div class="col-md-2">
-          <p class="data">uptime [%] <span class="leg-b">up</span> <span class="leg-g">down</span></p>
-          <div ng-if="charts[web.website].data" data-ac-chart="'pie'" data-ac-data="charts[web.website]" class="pie-chart"></div>
-        </div>
-        <div class="col-md-2 text-center"><img ng-src="{{server + web.website.substr(web.website.indexOf('://')+3, web.website.length)}}.png" class="screenshot" alt=""></div>
+        <!-- <div class="col-md-2 text-center"><img ng-src="" class="screenshot" alt=""></div> -->
         <ul class="setup">
           <li><span class="opts o-edit" ng-click="sets.edit(web.website, $index)">EDIT</span></li>
           <li><span class="opts o-del" ng-click="sets.delete(web.website, $index)">DEL</span></li>

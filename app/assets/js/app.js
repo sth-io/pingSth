@@ -21,6 +21,10 @@ angular.module('noteSth', [
             templateUrl: '/views/index.html',
             controller: 'home'
         })
+        .when('/privacy', {
+            templateUrl: '/views/privacy.html',
+            controller: ''
+        })
         .otherwise({
             redirectTo: '/'
         });

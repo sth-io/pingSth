@@ -9,6 +9,11 @@
     .background-size(cover);
     background-position: bottom;
   }
+  &.home {
+    background-image: url("../../assets/img/home.jpg");
+    .background-size(cover);
+    // background-position: bottom;
+  }
 }
 .box {
   border-radius: 4px;
@@ -290,22 +295,30 @@ header {
     .marg(10);
   }
   .icons {
-    .marg(5);
+    .marg(20);
+    i {
+      cursor: pointer;
+    }
   }
 }
 @keyframes modal {
   from {
     top: -100vh;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
   }
   to {
     top: 80px;
+    opacity: 1;
   }
 }
 .note-modal {
   z-index: 9000;
   .box;
   .box-green;
-  animation: modal 0.5s normal forwards ease-in-out;
+  animation: modal 0.8s normal forwards ease-in-out;
   animation-iteration-count: 1;
   display: block;
   position: fixed;
@@ -428,7 +441,7 @@ header {
     opacity: 0.5;
   }
   circle {
-    fill: #25b7d3 !important;
+    fill: transparent !important;
     stroke: transparent !important;
   }
   .domain {
@@ -439,8 +452,20 @@ header {
 }
 p.data {
   position:absolute;
-  top: -10px;
-  left: 15px;
+  bottom: -17px;
+  right: 15px;
+}
+table {
+  width: 100%;
+  color: #3E6372;
+  .marg(10,0,10);
+  .font-size(13);
+  td:nth-child(2) {
+    .text-right;
+  }
+  a {
+    color: #3E6372;
+  }
 }
 .leg-b, .leg-g {
   &:before {
@@ -526,5 +551,46 @@ p.data {
     max-height:1000px;
     // height:300px;
     right:0px;
+  }
+}
+
+
+.home-container {
+  position: relative;
+  .btn {
+    display:block;
+    max-width: 200px;
+    .marg-auto(10,10);
+    &:hover {
+      .padd(8,0,8);
+    }
+  }
+  .box {
+    .padd(40,40,40,40);
+    p{
+      .font-size(16);
+    }
+  }
+  .mt100 {
+    margin-top: 50px;
+  }
+}
+.logo-cont {
+  .logo {
+    .padd();
+    .marg();
+  }
+  h2 {
+    .font-size(25);
+    color: #fff;
+    .marg(0);
+    .padd(0,0,0,0);
+  }
+}
+footer {
+  .text-center;
+  .padd(100,0,10);
+  a {
+    display: inline-block;
   }
 }

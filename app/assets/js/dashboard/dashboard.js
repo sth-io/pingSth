@@ -123,9 +123,20 @@ app.controller('dashboard', ['$scope', 'dataS', '$cookieStore', '$location', '$r
       $scope.websites.push(data);
       new Status(data);
     });
+
+    $scope.chartconf = {
+      legend: {
+        display: false,
+        position: 'left',
+        // you can have html in series name
+        htmlEnabled: false,
+         waitForHeightAndWidth: false
+      }
+    }
+
+
+
+
+
   }
-
-
-
-
 ]);

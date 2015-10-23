@@ -12,5 +12,11 @@ app.controller('base', ['$scope', 'dataS', '$cookieStore', '$location',
        $scope.callmodal = function(type) {
            $scope.modal = type;
        }
+       $scope.logout = function(){
+         $cookieStore.put('token', null);
+         $cookieStore.put('id', null);
+         $location.path('/');
+       }
+
     }
 ]);

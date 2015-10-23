@@ -1,14 +1,21 @@
-<!doctype html>
-<html ng-app="noteSth">
-  <head>
-    <script src="../public/notesth-lib.min.js"></script>
-    <script src="../public/notesth.min.js"></script>
-    <link type="text/css" rel="stylesheet" href="../public/css/app.css"></link>
-  </head>
-  <body ng-controller="base">
-   <div ng-show="usr.email" ng-include="'/views/parts/header.html'"></div>
-   <modal ng-show="modal" type="{{modal}}"></modal>
-   
-    <div ng-view></div>
-  </body>
+<!DOCTYPE html>
+<html lang="en" ng-app="noteSth">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>pingSth</title>
+  <script src="../public/notesth-lib.min.js"></script>
+  <script src="../public/notesth.min.js"></script>
+  <link type="text/css" rel="stylesheet" href="../public/css/app.css"></link>
+</head>
+
+<body ng-controller="base">
+  <div ng-show="usr.email" ng-include="'/views/parts/header.html'"></div>
+  <modal ng-show="modal" type="{{modal}}"></modal>
+
+  <div ng-view></div>
+</body>
+
 </html>
