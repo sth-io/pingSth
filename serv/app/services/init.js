@@ -1,4 +1,4 @@
-var Ping = require('./pinger'),
+var Ping = require('./ping'),
   Website = require('../models/website'),
   cron = require('cron'),
   exec = require('child_process').exec;
