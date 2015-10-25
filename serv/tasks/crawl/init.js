@@ -34,8 +34,33 @@ new Crawler().configure({
     console.log(crawledUrls);
   });
 
-structurer function() {
+function structurer(web) {
+  this.params = {};
+  this.params.regex = null;
+  this.params.depth = 4;
+  this.params.relative = false;
+  this.init(web);
+}
 
+structurer.prototype = {
+  init: function(web) {
+    this.params = web;
+
+
+  },
+  crawler: function() {
+    var self = this;
+    new Crawler().configure({
+        ignoreRelative: self.params.realtive,
+        depth: self.params.depth,
+        shouldCrawl: function(url) {
+          if(self.params.regex !== null) {
+            switch 
+                return !config.regex.val.test(url);
+          }
+        }
+      })
+  }
 }
 
 // todo
