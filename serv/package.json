@@ -19,5 +19,9 @@
     "colors": "~1.1.2",
     "cron": "1.0.9",
     "js-crawler": "~0.3.7"
+  },
+  "devDependencies": {
+    "jasmine": "~2.3.2",
+    "jasmine-node": "~1.14.5"
   }
 }

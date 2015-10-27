@@ -18,7 +18,7 @@ describe("Token Auth", function() {
                     token: token
                 }
             };
-        
+
         auth({body: {'test': 'test'}, query: {'test': 'test'}, headers: {'test': 'test'}}, function(cb) {
             expect(cb).toBe(false);
         });
@@ -26,11 +26,11 @@ describe("Token Auth", function() {
         auth(req, function(cb) {
             expect(cb.email).toBe(user.email);
         });
-        
+
         req.body.token = "lel";
         auth(req, function(cb) {
             expect(cb).toBe(false);
         });
-        
+
     });
 });
