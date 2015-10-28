@@ -11,7 +11,11 @@ var websiteSchema = new mongoose.Schema({
     up: Number,
     down: Number,
     total: Number,
-    edit: Date
+    structurer: Number,
+    edit: Date,
+    regex: Object,
+    depth: Number,
+    relative: Boolean
 })
 
 // // create the model for users and expose it

@@ -2,6 +2,7 @@ var Ping = require('./ping'),
   Website = require('../models/website'),
   cron = require('cron'),
   exec = require('child_process').exec;
+  Crawl = require('./crawl/init');
 
 exec('node tasks/batchStatus/init.js', function(error, stdout, stderr) {
   console.log('stdout: ' + stdout);
@@ -28,6 +29,7 @@ function Init() {
   Website.find({}, function(err, websites) {
     for (var i = 0, len = websites.length; i < len; i++) {
       new Ping(websites[i]);
+      new Crawl(websites[i]);
     }
   })
 }

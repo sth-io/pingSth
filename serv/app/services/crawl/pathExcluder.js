@@ -1,6 +1,7 @@
 function pathExcl(url, params) {
   var result;
-  if (params.regex !== null) {
+  console.log(params);
+  if (params.regex != null && 'regex' in params) {
     switch (params.regex.excl) {
       case true:
         result = !params.regex.val.test(url);
