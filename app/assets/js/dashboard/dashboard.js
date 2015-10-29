@@ -141,6 +141,9 @@ app.controller('dashboard', ['$scope', 'dataS', '$cookieStore', '$location', '$r
 
   window.dispatchEvent(new Event('resize'));
 
+$scope.setDisp = function(){
+  return Math.round((5 / $scope.displayset)*4)
+}
 
    });
 

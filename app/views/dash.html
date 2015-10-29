@@ -18,7 +18,7 @@
     <div class="col-md-{{displayset}}" ng-repeat="web in websites track by $index">
       <div class="box" ng-class="{'box-red': getStat(web.website).status == false, 'box-sand': getStat(web.website).status == null}">
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-md-{{setDisp()}}">
             <h2><a href="/website/{{web._id}}">{{web.website.substr(web.website.indexOf('://')+3, web.website.length)}}</a></h2>
             <table>
               <tr>
@@ -35,7 +35,7 @@
               </tr>
             </table>
           </div>
-          <div class="col-md-9">
+          <div class="col-md-{{8+displayset/6}}">
             <p class="data">response time [ms]</p>
             <div ng-if="getStat(web.website).status" data-ac-chart="'line'" data-ac-config="chartconf" data-ac-data="responses[web.website]" class="chart">
             </div>
@@ -51,7 +51,7 @@
           </ul>
           <i class="status" ng-class="{'s-false': getStat(web.website).status == false, 's-true': getStat(web.website).status == true, 's-waiting': getStat(web.website).status == null}"></i>
         </div>
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-md-12">
             <ul class="box-info">
               <li>scanned pages: {{sitemap.length}}</li>
@@ -59,7 +59,7 @@
               <li>changed: <span>http://demo.com/wtf/someweb</span></li>
             </ul>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

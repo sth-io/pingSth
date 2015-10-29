@@ -12,6 +12,7 @@ var app = require('../../app'),
   Websites = require('../models/website'),
   Ping = require('../services/ping'),
   Status = require('../models/status'),
+  Sitemap = require('../models/sitemap'),
   ObjectId = require('mongoose').Types.ObjectId;
 
 // DEFAULT NO TOKEN RETURN
@@ -49,11 +50,18 @@ apiRoutes.route('/status/:website')
     .get(function(req, res) {
       auth(req, function(cb) {
         if (cb) {
-
+          var data;
           Websites.findOne({
             _id: new ObjectId(req.params.id)
-          }, function(err, data) {
-            res.status(200).json(data);
+          }, function(err, website) {
+              data = website;
+              Sitemap.findOne({
+                website: data.website
+              }, function(err, sitemap) {
+
+                res.status(200).json({website: data, sitemap: sitemap});
+              })
+
           })
 
         }

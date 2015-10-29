@@ -31,8 +31,9 @@
     </div>
     <div class="col-md-4">
       <h2>Cached structure</h2>
+      date gathered: {{sitemap.timestamp}}
       <ul>
-        <li ng-repeat="str in web.structure">
+        <li ng-repeat="str in sitemap.sitemap">
           <a href="{{str}}">{{str}}</a>
         </li>
       </ul>

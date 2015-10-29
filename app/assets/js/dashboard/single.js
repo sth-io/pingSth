@@ -4,11 +4,12 @@ app.controller('single', ['$scope', 'dataS', '$cookieStore', '$location', '$root
   function($scope, dataS, $cookieStore, $location, $rootScope, config) {
     dataS.getData(window.location.pathname, true)
       .success(function(data) {
-        $scope.web = data;
+        $scope.web = data.website;
+        $scope.sitemap = data.sitemap;
 
-        $scope.responses[data.website] = {data: [], series: ['']};
-        getXRecords(40, data);
-        new Status(data);
+        $scope.responses[data.website.website] = {data: [], series: ['']};
+        getXRecords(40, data.website);
+        new Status(data.website);
 
       })
 
@@ -74,7 +75,7 @@ app.controller('single', ['$scope', 'dataS', '$cookieStore', '$location', '$root
            waitForHeightAndWidth: false
         }
       }
-      
+
       $scope.sitemap = ['http://test.pl', 'http://test.pl/demo', 'http://test.pl/demo/asdlas/1234', 'http://test.pl/demo/asdlas/12342', 'http://test.pl/demo/asdlas/12346', 'http://test.pl/demo/asdlas/1234e', 'http://test.pl/demo/asdlas/1234wq', 'http://test.pl/demo/asdlas/1234azxczx', 'http://test.pl/demo/asdlas/123asd4', 'http://test.pl/demo/asdlas/123412', 'http://test.pl/demo/asdlas/1234ccc', 'http://test.pl/demo/asdlas/1234sa']
 
 
