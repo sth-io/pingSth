@@ -21,9 +21,16 @@
   .padd(20, 10, 20, 90);
   min-height: 120px;
   position: relative;
+  .box-shadow(0px 5px 3px 0px rgba(50, 50, 50, 0.15));
   .marg(0, 0, 20);
+  h2 a {
+    color: #000;
+  }
   img {
     max-width: 100%;
+  }
+  &.box-nop {
+    .padd(20,10,10,10);
   }
   &:before {
     position: absolute;
@@ -305,7 +312,7 @@ header {
   height: 60px;
   z-index: 9000;
   display: block;
-  .box-shadow(0px 4px 17px 0px rgba(0,0,0,0.2));
+  .box-shadow(0px 4px 5px 0px rgba(0,0,0,0.2));
   background: #fff;
   .hlogo {
     max-height: 50px;
@@ -451,15 +458,25 @@ header {
   .ac-line {
     stroke: #25b7d3 !important;
   }
+  .area {
+    fill: #25b7d3 !important;
+  }
   .x.axis {
     display: none;
   }
   .y.axis {
     opacity: 0.5;
   }
+
   circle {
     fill: transparent !important;
     stroke: transparent !important;
+    .transition(all 0.2s);
+    cursor: pointer;
+    &:hover {
+      fill:  #25b7d3 !important;
+      stroke:  #25b7d3 !important;
+    }
   }
   .domain {
     display: none;
@@ -518,7 +535,14 @@ table {
     }
   }
 }
-
+.ac-tooltip {
+  border: none !important;
+  background-color: rgba(37, 183, 211, 0.5) !important;
+  margin-left:-30px;
+  .font-size(14);
+  .padd(5,15,5,15);
+  font-family: @font-medium;
+}
 .setup {
   position: absolute;
   top:50%;

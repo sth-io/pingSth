@@ -45,6 +45,25 @@ apiRoutes.route('/status/:website')
     })
   });
 
+  apiRoutes.route('/website/:id')
+    .get(function(req, res) {
+      auth(req, function(cb) {
+        if (cb) {
+
+          Websites.findOne({
+            _id: new ObjectId(req.params.id)
+          }, function(err, data) {
+            res.status(200).json(data);
+          })
+
+        }
+        else {
+
+        }
+      });
+
+    });
+
 apiRoutes.route('/xstatus/:website/:qty')
   .get(function(req, res) {
     Websites.findOne({
@@ -61,7 +80,7 @@ apiRoutes.route('/xstatus/:website/:qty')
 
         });
       } else {
-        res.status(200);
+          notoken(res);
       }
     })
   });

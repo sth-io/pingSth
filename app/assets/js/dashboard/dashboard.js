@@ -134,8 +134,15 @@ app.controller('dashboard', ['$scope', 'dataS', '$cookieStore', '$location', '$r
       }
     }
     $scope.sitemap = ['http://test.pl', 'http://test.pl/demo', 'http://test.pl/demo/asdlas/1234', 'http://test.pl/demo/asdlas/12342', 'http://test.pl/demo/asdlas/12346', 'http://test.pl/demo/asdlas/1234e', 'http://test.pl/demo/asdlas/1234wq', 'http://test.pl/demo/asdlas/1234azxczx', 'http://test.pl/demo/asdlas/123asd4', 'http://test.pl/demo/asdlas/123412', 'http://test.pl/demo/asdlas/1234ccc', 'http://test.pl/demo/asdlas/1234sa']
+    $scope.displayset = 6;
+    $scope.relcharts = true;
+    $scope.$watch('displayset', function() {
 
 
+  window.dispatchEvent(new Event('resize'));
+
+
+   });
 
 
   }

@@ -88,3 +88,16 @@
 
   }
 }
+
+.i-disp {
+    display: inline-block;
+    .dims-rem(48, 48);
+    cursor: pointer;
+    .background-size(cover);
+    &.one {
+        background-image: url('/assets/img/icons/1cols.svg');
+    }
+    &.two {
+        background-image: url('/assets/img/icons/2cols.svg');
+    }
+}

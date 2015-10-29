@@ -17,6 +17,10 @@ angular.module('noteSth', [
             templateUrl: '/views/dash.html',
             controller: 'dashboard'
         })
+        .when('/website/:id', {
+            templateUrl: '/views/single.html',
+            controller: 'single'
+        })
         .when('/', {
             templateUrl: '/views/index.html',
             controller: 'home'

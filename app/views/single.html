@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1>{{web.website.substr(web.website.indexOf('://')+3, web.website.length)}}</h1>
+    </div>
+    <div class="col-md-8">
+      <div class="col-md-12">
+        <div ng-if="getStat(web.website).status" data-ac-chart="'line'" data-ac-config="chartconf" data-ac-data="responses[web.website]" class="chart"></div>
+      </div>
+      <div class="col-md-6">
+        <div class="box box-nop">
+          <ul>
+            <li>Structurer:
+              <span ng-if="web.structurer >=1 ">On</span>
+              <span ng-if="web.structurer < 1 || !web.structurer || web.structurer === false">Off</span>
+            </li>
+            <li>Repeat: {{web.structurer}} min.</li>
+            <li>Depth: {{web.depth}}</li>
+          </ul>
+
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="box box-nop">
+          <ul>
+            <li>Pinging timeout: {{web.timeout}}</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-4">
+      <h2>Cached structure</h2>
+      <ul>
+        <li ng-repeat="str in web.structure">
+          <a href="{{str}}">{{str}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>

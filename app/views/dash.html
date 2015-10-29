@@ -1,4 +1,4 @@
-<div class="container" ng-show="notes.length == 0">
+<!-- <div class="container" ng-show="notes.length == 0">
   <div class="row">
     <div class="cta-note" ng-click="callmodal('addnote')">
       <i class="icon i-add"></i>
@@ -6,14 +6,20 @@
       <p>Click here to add a new note!</p>
     </div>
   </div>
-</div>
+</div> -->
 <div class="container">
   <div class="row">
-    <div class="col-md-6" ng-repeat="web in websites track by $index">
+    <div class="col-md-4">
+      <div class="i-disp two" ng-click="displayset=6"></div>
+      <div class="i-disp one" ng-click="displayset=12"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-{{displayset}}" ng-repeat="web in websites track by $index">
       <div class="box" ng-class="{'box-red': getStat(web.website).status == false, 'box-sand': getStat(web.website).status == null}">
         <div class="row">
           <div class="col-md-3">
-            <h2>{{web.website.substr(web.website.indexOf('://')+3, web.website.length)}}</h2>
+            <h2><a href="/website/{{web._id}}">{{web.website.substr(web.website.indexOf('://')+3, web.website.length)}}</a></h2>
             <table>
               <tr>
                 <td>timeout</td>
