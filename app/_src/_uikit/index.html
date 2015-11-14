@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="Krzysztof Węgliński">
+	<title>BoilSth - Welcome</title>
+	<!-- Load CSS -->
+	<link href="../../_dist/css/piwikorg.min.css" rel="stylesheet">
+	<link href="css/uikit.min.css" rel="stylesheet"> </head>
+
+<body class="uik" role="document">
+	<div class="uik-side">
+		<ul>
+			<li> <a href="#Typography">Typography</a> </li>
+			<li> <a href="#Containers">Containers</a> </li>
+			<li> <a href="#Containers-container">Containers in .container</a> </li>
+			<li> <a href="#Containers-article">Containers in article .container</a> </li>
+			<li> <a href="#Buttons">Buttons</a> </li>
+			<li> Blog </li>
+			<li> Sliders </li>
+		</ul>
+	</div>
+	<div class="uik-content">
+		<div class="uik-head" id="Typography">
+			<h1>Typography</h1>
+		</div>
+		<div class="uik-inn">
+			<h2 class="uik-h">Links</h2>
+			<p> <a href="#">Link somewhere</a>
+				<pre>
+					<code data-language="html"><a href="#">Link somewhere</a></code>
+				</pre>
+			</p>
+			<h2 class="uik-h">Headers</h2>
+			<h1>Header H1</h1>
+			<h2>Header H2</h2>
+			<h3>Header H3</h3>
+			<h3>Header H4</h3>
+			<h3>Header H5</h3>
+			<pre>
+				<code data-language="html">
+					<h1>Header H1</h1>
+					<h2>Header H2</h2>
+					<h3>Header H3</h3>
+					<h3>Header H4</h3>
+					<h3>Header H5</h3>
+				</code>
+			</pre>
+			<h2 class="uik-h">Paragraph &amp; paragraph styles</h2>
+			<p>Bacon ipsum dolor amet ball tip meatloaf
+				<strong>capicola</strong>, porchetta pork boudin fatback short ribs cow pastrami shankle swine filet mignon beef pancetta. Short loin biltong bacon drumstick, shoulder pastrami turkey landjaeger corned beef. Ball tip ham flank frankfurter, beef ribs venison
+				pastrami hamburger shankle boudin pork loin bresaola pork picanha bacon. Leberkas jowl venison hamburger shoulder pig. Short loin landjaeger capicola short ribs ham sausage pork loin biltong tenderloin pig sirloin. Pastrami short loin ham hock jowl
+				ham. Ball tip boudin shank chicken drumstick tri-tip pancetta.</p>
+			<pre>
+				<code data-language="html">
+					<p>Bacon ipsum dolor amet ball tip meatloaf
+						<strong>capicola</strong>, porchetta pork boudin fatback short ribs cow pastrami shankle swine filet mignon beef pancetta. Short [...]</p>
+				</code>
+			</pre>
+			<strong>bold</strong>
+			<pre>
+				<code data-language="html">
+					<strong>bold</strong>
+				</code>
+			</pre>
+			<em>italics</em>
+			<pre>
+				<code data-language="html">
+					<em>italics</em>
+				</code>
+			</pre>
+			<h2 class="uik-h">Lists</h2>
+			<p>ordered list</p>
+			<ol>
+				<li>Element</li>
+				<li>Element</li>
+				<li>Element</li>
+			</ol>
+			<pre>
+				<code data-language="html">
+					<ol>
+						<li>Element</li>
+						<li>Element</li>
+						<li>Element</li>
+					</ol>
+				</code>
+			</pre>
+			<p>unordered list</p>
+			<ul>
+				<li>Element</li>
+				<li>Element</li>
+				<li>Element</li>
+			</ul>
+			<pre>
+				<code data-language="html">
+					<ul>
+						<li>Element</li>
+						<li>Element</li>
+						<li>Element</li>
+					</ul>
+				</code>
+			</pre>
+		</div>
+		<!--        end of typography-->
+		<div class="uik-head" id="Containers">
+			<h1>Containers</h1>
+		</div>
+		<div class="uik-inn">
+			<p>counter</p>
+			<section class="counter">
+				<p>Piwik has been downloaded</p>
+				<div class="counter-container">
+					<div class="counter-box counter-zeropos active-2">
+						<span> 9 0 1 2 3 4 5 6 7 8 9 0
+						</span>
+					</div>
+					<div class="counter-comma">,</div>
+					<div class="counter-box counter-zeropos active-5">
+						<span> 9 0 1 2 3 4 5 6 7 8 9 0
+						</span>
+					</div>
+					<div class="counter-box counter-zeropos active-5">
+						<span> 9 0 1 2 3 4 5 6 7 8 9 0
+						</span>
+					</div>
+					<div class="counter-box counter-zeropos active-2">
+						<span> 9 0 1 2 3 4 5 6 7 8 9 0
+						</span>
+					</div>
+					<div class="counter-comma">,</div>
+					<div class="counter-box counter-zeropos active-5">
+						<span> 9 0 1 2 3 4 5 6 7 8 9 0
+						</span>
+					</div>
+					<div class="counter-box counter-zeropos active-7">
+						<span> 9 0 1 2 3 4 5 6 7 8 9 0
+						</span>
+					</div>
+					<div class="counter-box counter-zeropos active-4">
+						<span> 9 0 1 2 3 4 5 6 7 8 9 0
+						</span>
+					</div>
+					<p>times.</p>
+				</div>
+			</section>
+			<pre>
+				<code data-language="html">
+					<section class="counter">
+						<p>Piwik has been downloaded</p>
+						<div class="counter-container">
+							<div class="counter-box counter-zeropos active-2">
+								<span> 9 0 1 2 3 4 5 6 7 8 9 0
+								</span>
+							</div>
+							<div class="counter-comma">,</div>
+							<div class="counter-box counter-zeropos active-5">
+								<span> 9 0 1 2 3 4 5 6 7 8 9 0
+								</span>
+							</div>
+							<div class="counter-box counter-zeropos active-5">
+								<span> 9 0 1 2 3 4 5 6 7 8 9 0
+								</span>
+							</div>
+							<div class="counter-box counter-zeropos active-2">
+								<span> 9 0 1 2 3 4 5 6 7 8 9 0
+								</span>
+							</div>
+							<div class="counter-comma">,</div>
+							<div class="counter-box counter-zeropos active-5">
+								<span> 9 0 1 2 3 4 5 6 7 8 9 0
+								</span>
+							</div>
+							<div class="counter-box counter-zeropos active-7">
+								<span> 9 0 1 2 3 4 5 6 7 8 9 0
+								</span>
+							</div>
+							<div class="counter-box counter-zeropos active-4">
+								<span> 9 0 1 2 3 4 5 6 7 8 9 0
+								</span>
+							</div>
+							<p>times.</p>
+						</div>
+					</section>
+				</code>
+			</pre>
+			<p>User Animation</p>
+			<section class="users-anim" style="height: 235px;">
+				<div class="ua-bg">
+					<div class="ua-mo"></div>
+					<div class="ua-bd1"></div>
+					<div class="ua-bd2"></div>
+				</div>
+				<div class="ua-sky">
+					<div class="ua-cloud ua-cl-one"></div>
+					<div class="ua-cloud ua-cl-two"></div>
+					<div class="ua-cloud ua-cl-three"></div>
+					<div class="ua-cloud ua-cl-four"></div>
+				</div>
+				<div class="ua-fplan">
+					<div class="ua-la ua-la-fst"></div>
+					<div class="ua-la ua-la-sc"></div>
+					<div class="ua-la ua-la-th"></div>
+					<div class="ua-smokes ua-one"></div>
+					<div class="ua-smokes ua-two"></div>
+					<div class="ua-smokes ua-three"></div>
+					<div class="ua-smokes ua-four"></div>
+					<div class="ua-b-in"></div>
+					<div class="ua-b-sb"></div>
+					<div class="ua-b-ps"></div>
+					<div class="ua-b-co"></div>
+				</div>
+				<div class="ua-car">
+					<div class="ua-driver"></div>
+				</div>
+			</section>
+			<div class="ua-places text-center">
+				<div class="table-cell">Individuals</div>
+				<div class="table-cell">Small business</div>
+				<div class="table-cell">Public sector</div>
+				<div class="table-cell">Corporate</div>
+			</div>
+			<pre>
+				<code data-language="html">
+					<section class="users-anim" style="height: 235px;">
+						<div class="ua-bg">
+							<div class="ua-mo"></div>
+							<div class="ua-bd1"></div>
+							<div class="ua-bd2"></div>
+						</div>
+						<div class="ua-sky">
+							<div class="ua-cloud ua-cl-one"></div>
+							<div class="ua-cloud ua-cl-two"></div>
+							<div class="ua-cloud ua-cl-three"></div>
+							<div class="ua-cloud ua-cl-four"></div>
+						</div>
+						<div class="ua-fplan">
+							<div class="ua-la ua-la-fst"></div>
+							<div class="ua-la ua-la-sc"></div>
+							<div class="ua-la ua-la-th"></div>
+							<div class="ua-smokes ua-one"></div>
+							<div class="ua-smokes ua-two"></div>
+							<div class="ua-smokes ua-three"></div>
+							<div class="ua-smokes ua-four"></div>
+							<div class="ua-b-in"></div>
+							<div class="ua-b-sb"></div>
+							<div class="ua-b-ps"></div>
+							<div class="ua-b-co"></div>
+						</div>
+						<div class="ua-car">
+							<div class="ua-driver"></div>
+						</div>
+					</section>
+					<div class="ua-places text-center">
+						<div class="table-cell">Individuals</div>
+						<div class="table-cell">Small business</div>
+						<div class="table-cell">Public sector</div>
+						<div class="table-cell">Corporate</div>
+					</div>
+				</code>
+			</pre>
+			<div class="mobile-app">
+				<div class="container">
+					<div class="col-md-5 col-lg-5  col-sm-10 col-xs-10 ">
+						<h3>Piwik Mobile App</h3>
+						<p class="base-size">
+							<span>Need your analytics on the go?</span> Use our free Piwik Mobile app to check your stats from anywhere and show them to colleagues in meetings.</p>
+						<a href="http://piwik.org/mobile/">Read More</a>
+						<div class="stores">
+							<a href="https://itunes.apple.com/us/app/piwik-mobile-2/id737216887?mt=8">
+								<!-- <img src="/wp-content/themes/piwik/frontend/dist/img/icons/appstore-grey.png"> -->
+								<img src="file:///home/adam/dev/piwikorg-new/_dist/img/icons/appstore-grey.png">
+
+							</a>
+							<a href="https://play.google.com/store/apps/details?id=org.piwik.mobile2">
+								<!-- <img src="/wp-content/themes/piwik/frontend/dist/img/icons/googleplay-grey.png"> -->
+								<img src="file:///home/adam/dev/piwikorg-new/_dist/img/icons/googleplay-grey.png">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<pre>
+				<code data-language="html">
+					<div class="mobile-app">
+						<div class="container">
+							<div class="col-md-5 col-lg-5  col-sm-10 col-xs-10 ">
+								<h3>Piwik Mobile App</h3>
+								<p class="base-size">
+									<span>Need your analytics on the go?</span> Use our free Piwik Mobile app to check your stats from anywhere and show them to colleagues in meetings.</p>
+								<a href="http://piwik.org/mobile/">Read More</a>
+								<div class="stores">
+									<a href="https://itunes.apple.com/us/app/piwik-mobile-2/id737216887?mt=8">
+										<img src="/wp-content/themes/piwik/frontend/dist/img/icons/appstore-grey.png">
+									</a>
+									<a href="https://play.google.com/store/apps/details?id=org.piwik.mobile2">
+										<img src="/wp-content/themes/piwik/frontend/dist/img/icons/googleplay-grey.png">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</code>
+			</pre>
+		</div>
+		<!-- end of containers-->
+		<div class="uik-head" id="Containers-container">
+			<h1>Containers in .container</h1>
+		</div>
+		<div class="uik-inn">
+			<p>sticky content list</p>
+			<div class="container">
+				<div class="row">
+					<nav id="sticky">
+						<div class="navbar-inner">
+							<ul class="nav">
+								<li>
+									<a href="#why-choose-piwik">Why choose Piwik?</a>
+								</li>
+								<li>
+									<a href="#what-can-i-use-piwik-for">What can I use Piwik for?</a>
+								</li>
+								<li>
+									<a href="#profile-your-audience">Profile your audience</a>
+								</li>
+								<li>
+									<a href="#websites-that-use-piwik">Websites that use Piwik</a>
+								</li>
+								<li>
+									<a href="#discover-your-users-journey">Discover your users&#8217; journey</a>
+								</li>
+								<li>
+									<a href="#measure-your-goals-and-increase-conversions">Measure your goals and increase conversions</a>
+								</li>
+								<li>
+									<a href="#piwik-values">Piwik values</a>
+								</li>
+								<li>
+									<a href="#mobile">Piwik Mobile App</a>
+								</li>
+								<li>
+									<a href="#piwik-pro-solutions">Piwik PRO Solutions</a>
+								</li>
+								<li>
+									<a href="#any-questions">Any questions?</a>
+								</li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+			<pre>
+				<code data-language="html">
+					<div class="row">
+						<nav id="sticky">
+							<div class="navbar-inner">
+								<ul class="nav">
+									<li>
+										<a href="#why-choose-piwik">Why choose Piwik?</a>
+									</li>
+									<li>
+										<a href="#what-can-i-use-piwik-for">What can I use Piwik for?</a>
+									</li>
+									<li>
+										<a href="#profile-your-audience">Profile your audience</a>
+									</li>
+									<li>
+										<a href="#websites-that-use-piwik">Websites that use Piwik</a>
+									</li>
+									<li>
+										<a href="#discover-your-users-journey">Discover your users&#8217; journey</a>
+									</li>
+									<li>
+										<a href="#measure-your-goals-and-increase-conversions">Measure your goals and increase conversions</a>
+									</li>
+									<li>
+										<a href="#piwik-values">Piwik values</a>
+									</li>
+									<li>
+										<a href="#mobile">Piwik Mobile App</a>
+									</li>
+									<li>
+										<a href="#piwik-pro-solutions">Piwik PRO Solutions</a>
+									</li>
+									<li>
+										<a href="#any-questions">Any questions?</a>
+									</li>
+								</ul>
+							</div>
+						</nav>
+					</div>
+				</code>
+			</pre>
+			<p>client-logo list</p>
+			<div class="container">
+				<div class="websites-logos">
+					<!-- <img src="/wp-content/themes/piwik/frontend/dist/img/logos/t-mobile.png"  class="logo">
+					<img src="/wp-content/themes/piwik/frontend/dist/img/logos/wikimedia.png" class="logo">
+					<img src="/wp-content/themes/piwik/frontend/dist/img/logos/nasa.png" class="logo">
+					<img src="/wp-content/themes/piwik/frontend/dist/img/logos/forbes.png" class="logo">
+					<img src="/wp-content/themes/piwik/frontend/dist/img/logos/sharp.png" class="logo">
+					<img src="/wp-content/themes/piwik/frontend/dist/img/logos/oxfam.png" class="logo"> -->
+					<img src="file:///home/adam/dev/piwikorg-new/_dist/img/logos/t-mobile.png" class="logo">
+					<img src="file:///home/adam/dev/piwikorg-new/_dist/img/logos/wikimedia.png" class="logo">
+					<img src="file:///home/adam/dev/piwikorg-new/_dist/img/logos/nasa.png" class="logo">
+					<img src="file:///home/adam/dev/piwikorg-new/_dist/img/logos/forbes.png" class="logo">
+					<img src="file:///home/adam/dev/piwikorg-new/_dist/img/logos/sharp.png" class="logo">
+					<img src="file:///home/adam/dev/piwikorg-new/_dist/img/logos/oxfam.png" class="logo">
+				</div>
+			</div>
+			<pre>
+				<code data-language="html">
+					<div class="websites-logos">
+						<img src="/wp-content/themes/piwik/frontend/dist/img/logos/t-mobile.png" class="logo">
+						<img src="/wp-content/themes/piwik/frontend/dist/img/logos/wikimedia.png" class="logo">
+						<img src="/wp-content/themes/piwik/frontend/dist/img/logos/nasa.png" class="logo">
+						<img src="/wp-content/themes/piwik/frontend/dist/img/logos/forbes.png" class="logo">
+						<img src="/wp-content/themes/piwik/frontend/dist/img/logos/sharp.png" class="logo">
+						<img src="/wp-content/themes/piwik/frontend/dist/img/logos/oxfam.png" class="logo">
+					</div>
+				</code>
+			</pre>
+		</div>
+		<!--end of containers in .container-->
+		<div class="uik-head" id="Containers-article">
+			<h1>Content in article .container</h1>
+		</div>
+		<div class="uik-inn">
+		<p>hover content table</p>
+		<article>
+		<div class="container">
+			<div class="row text-center">
+				<h2 id="why-choose-piwik">Why choose Piwik?</h2>
+			</div>
+			<div class="row text-center">
+				<div class="col-lg-12">
+					<div class="table table-border-inside features-table">
+						<div class="table-row">
+							<div class="table-cell">
+								<div>
+									<div>
+										<i class="icons-features-free-software"></i>
+										<h3>Free software</h3>
+										<p>Piwik is and always will be a free and open source software with transparent GPL license.</p>
+									</div>
+								</div>
+							</div>
+							<div class="table-cell">
+								<div>
+									<div><i class="icons-features-no-limit-storage"></i>
+										<h3>No data storage limits</h3>
+										<p>It&#8217;s totally up to you how much data you store and for how long.</p>
+									</div>
+								</div>
+							</div>
+							<div class="table-cell last">
+								<div>
+									<div><i class="icons-features-large-community"></i>
+										<h3>Community support</h3>
+										<p>Join our vibrant community and help contribute to developing a better and free analytics platform.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="table-row last">
+							<div class="table-cell">
+								<div>
+									<div><i class="icons-features-use-on-the-go"></i>
+										<h3>Use Piwik on the go</h3>
+										<p>View data in your browser or on the go with our Android and iOS applications.</p>
+									</div>
+								</div>
+							</div>
+							<div class="table-cell">
+								<div>
+									<div><i class="icons-features-international-solution"></i>
+										<h3>Worldwide accessibility</h3>
+										<p>Piwik is available in 53 languages and supports all time zones.</p>
+									</div>
+								</div>
+							</div>
+							<div class="table-cell last">
+								<div>
+									<div><i class="icons-features-fast-installation"></i>
+										<h3>5 minute installation and 1 click updates</h3>
+										<p>Get started within minutes, even if you are an inexperienced user.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</article>
+		<pre>
+			<code data-language="html">
+				<div class="row text-center">
+					<h2 id="why-choose-piwik">Why choose Piwik?</h2>
+				</div>
+				<div class="row text-center">
+					<div class="col-lg-12">
+						<div class="table table-border-inside features-table">
+							<div class="table-row">
+								<div class="table-cell">
+									<div>
+										<div>
+											<i class="icons-features-free-software"></i>
+											<h3>Free software</h3>
+											<p>Piwik is and always will be a free and open source software with transparent GPL license.</p>
+										</div>
+									</div>
+								</div>
+								<div class="table-cell">
+									<div>
+										<div><i class="icons-features-no-limit-storage"></i>
+											<h3>No data storage limits</h3>
+											<p>It&#8217;s totally up to you how much data you store and for how long.</p>
+										</div>
+									</div>
+								</div>
+								<div class="table-cell last">
+									<div>
+										<div><i class="icons-features-large-community"></i>
+											<h3>Community support</h3>
+											<p>Join our vibrant community and help contribute to developing a better and free analytics platform.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="table-row last">
+								<div class="table-cell">
+									<div>
+										<div><i class="icons-features-use-on-the-go"></i>
+											<h3>Use Piwik on the go</h3>
+											<p>View data in your browser or on the go with our Android and iOS applications.</p>
+										</div>
+									</div>
+								</div>
+								<div class="table-cell">
+									<div>
+										<div><i class="icons-features-international-solution"></i>
+											<h3>Worldwide accessibility</h3>
+											<p>Piwik is available in 53 languages and supports all time zones.</p>
+										</div>
+									</div>
+								</div>
+								<div class="table-cell last">
+									<div>
+										<div><i class="icons-features-fast-installation"></i>
+											<h3>5 minute installation and 1 click updates</h3>
+											<p>Get started within minutes, even if you are an inexperienced user.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</code>
+		</pre>
+	</div>
+	<!--end of containers in article .cotnainer-->
+		<div class="uik-head" id="Buttons">
+			<h1>Buttons</h1>
+		</div>
+		<div class="uik-inn">
+			<p>classic red / in text-center div</p>
+			<div class="text-center">
+				<div class="pwo-btn">download piwik now</div>
+			</div>
+			<pre>
+				<code data-language="html">
+					<div class="text-center">
+						<a href="#url" class="pwo-btn">download piwik now in link</a>
+					</div>
+				</code>
+			</pre>
+			<p>two-lines red / in text-center div</p>
+			<div class="text-center">
+				<div class="pwo-btn"> download piwik 2.14.3
+					<span>.zip - 15.5MB</span>
+				</div>
+			</div>
+			<pre>
+				<code data-language="html">
+					<div class="text-center">
+						<a href="#url" class="pwo-btn">download piwik now in link</a>
+					</div>
+				</code>
+			</pre>
+			<p>gray span / in text-center div</p>
+			<div class="text-center">
+				<div class="pwo-btn-gray">
+					<span>See</span> Demo
+				</div>
+			</div>
+			<pre>
+				<code data-language="html">
+					<div class="text-cetner">
+						<a href="#url" class="pwo-btn-gray">
+							<span>See</span> Demo</a>
+					</div>
+				</code>
+			</pre>
+			<p>gray classic / in text-center div</p>
+			<div class="text-center">
+				<div class="pwo-btn-gray">See Demo</div>
+			</div>
+			<pre>
+				<code data-language="html">
+					<div class="text-cetner">
+						<a href="#url" class="pwo-btn-gray">See see demo</a>
+					</div>
+				</code>
+			</pre>
+			<p>two-lines red expand</p>
+			<div class="pwo-btn pwo-btn-expand"> download piwik 2.14.3
+				<span>.zip - 15.5MB</span>
+			</div>
+			<pre>
+				<code data-language="html">
+					<div class="pwo-btn pwo-btn-expand"> download piwik 2.14.3
+						<span>.zip - 15.5MB</span>
+					</div>
+				</code>
+			</pre>
+		</div>
+	</div>
+	<script src="../../_dist/js/piwikorg-lib.min.js"></script>
+	<script src="../../_dist/js/piwikorg.min.js"></script>
+	<script src="js/rainbow.min.js"></script>
+</body>
+
+</html>

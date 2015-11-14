@@ -1,14 +1,37 @@
 {
-  "name": "NoteSth - app",
-  "devDependencies": {
-    "angular-charts": "~0.2.7",
-    "angular-cookies": "~1.4.7",
-    "angular": "1.4.3",
-    "angular-route": "~1.4.0",
-    "angular-html5-storage": "0.0.5",
-    "angular-local-storage": "~0.2.2"
-  },
-  "resolutions": {
-    "angular": "1.4.7"
-  }
+    "name": "boilsth",
+    "dependencies": {
+        "angular-charts": "~0.2.7",
+        "angular-cookies": "~1.4.7",
+        "angular": "1.4.3",
+        "angular-route": "~1.4.0",
+        "angular-html5-storage": "0.0.5",
+        "angular-local-storage": "~0.2.2"
+    },
+    "resolutions": {
+        "angular": "1.4.7"
+    },
+    "homepage": "https://github.com/sth-group/boilSth",
+    "authors": [
+        "kWeglinski <krzysiek@csth.pl>"
+    ],
+    "description": "Boilerplate for quick building websites.",
+    "main": "gulpfile.js",
+    "moduleType": [],
+    "keywords": [
+        "boilerplate",
+        "sth",
+        "less",
+        "gulp",
+        "browsersync"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "_src/lib",
+        "test",
+        "tests"
+    ]
 }

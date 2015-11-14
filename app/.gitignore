@@ -1,0 +1,5 @@
+#node modules
+node_modules
+#bower lib
+_src/lib
+lib
