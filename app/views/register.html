@@ -1,22 +1,20 @@
 <div class="full-bg login"></div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-3 col-md-offset-6">
-            <img src="../assets/img/logo_yw.svg" alt="" class="logo">
-            <div class="box box-sea box-log">
-                <h2>Create an account</h2>
-                <p>Here you can create your account to pingSth</p>
-                <form class="form">
-                    <input type="text" placeholder="email" ng-model="login.email">
-                    <input type="password" placeholder="password" ng-model="login.password">
-                    <button class="btn btn-b login-btn" ng-click="registerdo()">create my account</button>
-                </form>
-            </div>
-
-            <div class="text-center">
-                <p>Already have an account?</p>
-                <a href="/login" class="btn btn-o">log in!</a>
-            </div>
+<div class="sth sth-center">
+    <div class="sth-4 ns-single text-center">
+        <i class="logo"></i>
+        <div class="box">
+            <h1>Create an account</h1>
+            <p>Here you can create your account to pingSth</p>
+            <form class="form">
+                <input type="text" placeholder="email" ng-model="login.email">
+                <input type="password" placeholder="password" ng-model="login.password">
+                <button class="btn btn-ok" ng-click="registerdo()">create </button>
+            </form>
         </div>
+        <div class="btn-block">
+            <p>Already have an account?</p>
+            <a href="/login" class="btn">log in!</a>
+        </div>
+        <a href="/privacy">privacy policy</a>
     </div>
 </div>

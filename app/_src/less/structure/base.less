@@ -1,80 +1,47 @@
-
-body,
-html {
-    font-size: 12px;
-    background-color:#eeeef4;
-    height: 100%;
-    background-image: url('../img/bg.jpg');
-    .background-size(cover);
-}
-
-@import "btns.less";
+@import "variables.less";
+@import "typo.less";
 @import "containers.less";
+@import "forms.less";
+@import "btns.less";
 @import "icons.less";
-
-.top-offset {
-    width: 100%;
-    height: 100px;
+* {
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    /* Opera/IE 8+ */
 }
-
-.fade {
-    position: absolute;
-    top: 0px;
+.full-bg {
+    .background-size(cover);
+    position: fixed;
+    top: 0;
     left: 0;
-    right: 0;
-    min-height: 100%;
-    opacity: 1;
+    .dims(100%,100%);
+    z-index: -1;
+    &.home {
+        background-image: url(/_dist/img/home.jpg);
+    }
+    &.login {
+        background-image: url(/_dist/img/login_bg.jpg);
+        background-position: bottom;
+    }
 }
-
-.fade.ng-enter,
-.fade.ng-leave {
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+.ns-single {
+    max-width: 400px;
 }
-
-.fade.ng-enter {
-    opacity: 0;
+hr {
+    background-color: transparent;
+    border: none;
+    border-top: 1px solid #f3f3f3;
+    .marg(20,0,20);
 }
-
-.fade.ng-enter-active {
-    opacity: 1;
+body {
+    color: #555;
+    .padd(80);
 }
-
-.fade.ng-leave {
-    opacity: 1;
-}
-
-.fade.ng-leave-active {
-    opacity: 0;
-}
-
-.fade-ele.ng-enter,
-.fade.ng-leave {
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-.fade-ele.ng-enter {
-    opacity: 0;
-}
-
-.fade-ele.ng-enter-active {
-    opacity: 1;
-}
-
-.fade-ele.ng-leave {
-    opacity: 1;
-}
-
-.fade-ele.ng-leave-active {
-    opacity: 0;
-}
-
-.fade-ele {
-    position: absolute;
-    .transition(all 0.2s)
+@media screen and (max-width: 1024px) {
+    .sth-max-2 {
+        max-width: 100%;
+    }
 }

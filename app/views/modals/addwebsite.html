@@ -1,13 +1,18 @@
-<div ng-controller="websites">
-    Add a website
-    <input type="text" ng-model="website.body.website" placeholder="http://sample.com">
-    <input type="text" ng-model="website.body.timeout" placeholder="time in minutes ex. 1">
+<div ng-controller="websites" class="container">
+    <h1 class="text-center">Add a website</h1>
+    <form action="">
+        <input type="text" ng-model="website.body.website" placeholder="http://sample.com">
+        <input type="text" ng-model="website.body.timeout" placeholder="time in minutes ex. 1">
+
     <h3 class="codes">Before continuing, please make sure You've added detect code on your website.</h3>
-      <p class="detect-code">&lt;div pingsth=&quot;<span>{{id}}</span>&quot; style=&quot;display:none&quot;&gt;&lt;/div&gt;</p>
+    <p class="text-center">If your system works with code detection.</p>
+    <p class="detect-code">&lt;div pingsth=&quot;
+        <span>{{id}}</span>&quot; style=&quot;display:none&quot;&gt;&lt;/div&gt;</p>
 
 
-    <div class="text-right buttons">
-        <div ng-click="website.send(); callmodal()" class="btn btn-g">add new website</div>
+    <div class="btn-block">
+        <div ng-click="website.send(); callmodal()" class="btn btn-ok">add new website</div>
         <div class="btn right" ng-click="callmodal()">cancel</div>
     </div>
+    </form>
 </div>

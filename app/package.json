@@ -16,7 +16,8 @@
     "browser-sync": "~2.9.11"
   },
   "dependencies": {
-    "imagemin": "~3.2.1"
+    "imagemin": "~3.2.1",
+    "connect-modrewrite": "~0.8.2"
   },
   "description": "Boilerplate for quick building websites.",
   "main": "gulpfile.js",

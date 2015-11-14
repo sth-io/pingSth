@@ -1,0 +1,58 @@
+@import "_mixins.less";
+.sth {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-wrap: wrap;
+    max-width: 1100px;
+    .marg-auto();
+    &.sth-center {
+        align-content: center;
+    }
+    &.sth_full {
+        max-width: 100%;
+    }
+    [class^='sth-'] {
+        margin: auto;
+    }
+}
+.sth-space {
+    .padd(0,10,20,10);
+}
+
+// Specify maximum flex
+@flex-count: 10;
+.loopingClass (@index) when (@index <= @flex-count) {
+    /*This is the created ID with the index appended to it
+    You can also do this with classes such as if
+    we had had ".insert@{index}"*/
+    .sth-@{index} {
+        .fbox(@index);
+        position: relative;
+    }
+    /*Here we increment our loop*/
+    .loopingClass(@index + 1);
+}
+.loopingClass(1);
+@max-count: 6;
+.loopingS (@index) when (@index <= @max-count) {
+    /*This is the created ID with the index appended to it
+    You can also do this with classes such as if
+    we had had ".insert@{index}"*/
+    .sth-max-@{index} {
+        @wh: (100 / @index);
+        flex-basis: ~"@{wh}%";
+        -webkit-flex-basis: ~"@{wh}%";
+        max-width: ~"@{wh}%";
+    }
+    /*Here we increment our loop*/
+    .loopingS(@index + 1);
+}
+.loopingS(1);

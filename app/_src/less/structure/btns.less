@@ -1,63 +1,35 @@
-.btn {
-    font-family: @font-medium;
-    background: #F0836C;
-    border: 1px solid darken(#F0836C, 10%);
-    color: #fff;
-    text-transform: uppercase;
-    .transition(all .3s);  
-    &:hover {
-        color: #fff;
-        background: darken(#F0836C, 10%);
-        .padd(8,40,8,40);
-    }
-    &.btn-shd {
-        background: transparent;
-        color: rgba(0,0,0,0.4) !important;
-        border-color: rgba(0,0,0,0.4);
-        margin-right:20px;
+a {
+    color: #000;
+}
 
-    } 
-    &.btn-b {
-        background: #88D1DC;
-        border: 1px solid darken(#88D1DC, 10%);
-        &:hover {
-            background: darken(#88D1DC, 10%);
-        }
+
+.btn {
+    .padd(10,20,10,20);
+    .transition(all 0.2s);
+    background: @c-def;
+    border-radius: 2px;
+    .text-center;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: @c-darkg;
+    &:hover {
+        background: darken(@c-def, 10%);
     }
-    &.btn-g {
-        background: #88d8b0;
-        border: 1px solid darken(#88d8b0, 10%);
-        &:hover {
-            background: darken(#88d8b0, 10%);
-        }
-    }
-    &.btn-o {
-        background: #ffcc5c;
-         border: 1px solid darken(#ffcc5c, 10%);
-        &:hover {
-            background: darken(#ffcc5c, 10%);
-        }
-    }
-    &.google,
-    &.facebook {
-        display: inline-block;
-        text-transform: none;
-    }
-    &.google {
+
+    &.btn-ok {
+        background: @c-bb;
         color: #fff;
-        background: #E15645;
-        border: 1px solid darken(#E15645, 10%);
-    }
-    &.facebook {
-        color: #fff;
-        background: #4E68A2;
-        border: 1px solid darken(#4E68A2, 10%);
-        float: right;
+        &:hover {
+            background: darken(@c-bb, 10%);
+        }
     }
 }
-header {
+.btn-block {
     .btn {
-        margin-left:20px;
-        .padd(8,20,4,20);
+        max-width: 300px;
+        display:block;
+        .marg-auto(5,5);
     }
+    .padd(20,0,20);
 }

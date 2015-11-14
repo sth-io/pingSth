@@ -1,24 +1,27 @@
-@font-size-base: 14;
-// font-sizes for medium screen size
-@font-size-medium: 15;
-// font-size for small screen size
-@font-size-small: 16;
-// medium screen size
-@screen-medium: 1024px;
-// small screen size
-@screen-small: 640px;
 
-@import "bootstrap/bootstrap.less";
 // load _sth lib
+@screen-medium: '';
+@screen-small: '';
+@font-size-base: 16;
+@font-size-medium: 16;
+@font-size-small: 16;
 
 @fonts: 'montserrat-regular-webfont', 'montserrat-light-webfont';
 @fPath: '/_dist/fonts/';
+@f-regular: 'montserrat-regular-webfont';
+@f-light: 'montserrat-light-webfont';
+
+@import "../lib/Sth-Camouflage/_sth_base.less";
+@import "flex/flex.less";
+
+body {
+    font-family: 'montserrat-regular-webfont';
+    background: #ddd;
+    .background-size(cover);
+    // background-image: url('/_dist/img/bg.jpg');
+}
 
 @font-medium: 'monserrat-regular-webfont';
 @font-light: 'monserrat-light-webfont';
-
-@import "structure/variables.less";
-@base-font-size: 16;
-@import "../lib/Sth-Camouflage/_sth_base.less";
 
 @import "structure/base.less";

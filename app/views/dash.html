@@ -1,17 +1,7 @@
-<div class="container" ng-show="notes.length == 0">
-  <div class="row">
-    <div class="cta-note" ng-click="callmodal('addnote')">
-      <i class="icon i-add"></i>
-      <h2>You don't have any notes yet.</h2>
-      <p>Click here to add a new note!</p>
-    </div>
-  </div>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col-md-6" ng-repeat="web in websites track by $index">
-      <div class="box row" ng-class="{'box-red': getStat(web.website).status == false, 'box-sand': getStat(web.website).status == null}">
-        <div class="col-md-3">
+<div class="sth">
+    <div class="sth-max-2 sth-6 sth-space" ng-repeat="web in websites track by $index">
+      <div class="box website-box sth" ng-class="{'box-red': getStat(web.website).status == false, 'box-sand': getStat(web.website).status == null}">
+        <div class="box-head">
           <h2>{{web.website.substr(web.website.indexOf('://')+3, web.website.length)}}</h2>
           <table>
             <tr>
@@ -28,8 +18,8 @@
             </tr>
           </table>
         </div>
-        <div class="col-md-9">
-          <p class="data">response time [ms]</p>
+        <div class="sth-9">
+          <p class="data text-center">response time [ms]</p>
           <div ng-if="getStat(web.website).status"  data-ac-chart="'line'" data-ac-config="chartconf" data-ac-data="responses[web.website]"  class="chart">
           </div>
         </div>
@@ -41,5 +31,5 @@
         <i class="status" ng-class="{'s-false': getStat(web.website).status == false, 's-true': getStat(web.website).status == true, 's-waiting': getStat(web.website).status == null}"></i>
       </div>
     </div>
-  </div>
+
 </div>

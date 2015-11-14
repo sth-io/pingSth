@@ -1,14 +1,14 @@
 .icons {
     display: inline-block;
-    .dims-rem(40, 40);
+    .dims-rem(20, 20);
     .background-size(cover);
     cursor: pointer;
     &.i-add {
-        background-image: url('/assets/img/icons/add.svg');
+        background-image: url('../img/icons/add.svg');
     }
     &.i-logout {
-        .marg(20,0,0,40);
-        background-image: url('/assets/img/icons/logout.svg');
+        .marg(2,20,0,20);
+        background-image: url('../img/icons/logout.svg');
     }
       position:relative;
     span {
@@ -16,9 +16,9 @@
       opacity: 0.7;
       display: none;
       right:10px;
-      width: 100px;
+      width: 150px;
       .text-center;
-      bottom: -20px;
+      bottom: -30px;
       background: #000;
       color: #fff;
       font-style: normal;
@@ -34,35 +34,34 @@
     .dims-rem(48, 48);
     .background-size(cover);
     &.i-text {
-        background-image: url('/assets/img/icons/text.svg');
+        background-image: url('../img/icons/text.svg');
     }
     &.i-list {
-        background-image: url('/assets/img/icons/list.svg');
+        background-image: url('../img/icons/list.svg');
     }
     &.i-add {
         .dims-rem(300,300);
-        background-image: url('/assets/img/icons/add_bw.svg');
+        background-image: url('../img/icons/add_bw.svg');
     }
 }
 
 .status {
   position: absolute;
-  top:50%;
-  margin-top: -45px;
-  left:20px;
+  top:20px;
+  left:35px;
   display: block;
   .dims(40px, 40px);
   .background-size(cover);
 
   &.s-true {
-    background-image: url('/assets/img/icons/ok.svg');
+    background-image: url('../img/icons/ok.svg');
   }
   &.s-false {
-    background-image: url('/assets/img/icons/bad.svg');
+    background-image: url('../img/icons/bad.svg');
 
   }
   &.s-waiting {
-    background-image: url('/assets/img/icons/waiting.svg');
+    background-image: url('../img/icons/waiting.svg');
 
   }
 }
@@ -80,11 +79,11 @@
     content: "";
   }
   &.o-edit:before {
-    background-image: url('/assets/img/icons/edit.svg');
+    background-image: url('../img/icons/edit.svg');
 
   }
   &.o-del:before {
-    background-image: url('/assets/img/icons/delete.svg');
+    background-image: url('../img/icons/delete.svg');
 
   }
 }
