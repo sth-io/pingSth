@@ -6,7 +6,8 @@
         "angular": "1.4.3",
         "angular-route": "~1.4.0",
         "angular-html5-storage": "0.0.5",
-        "angular-local-storage": "~0.2.2"
+        "angular-local-storage": "~0.2.2",
+        "Sth-Camouflage": "*"
     },
     "resolutions": {
         "angular": "1.4.7"

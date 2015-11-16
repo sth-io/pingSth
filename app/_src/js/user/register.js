@@ -1,14 +1,14 @@
 var app = angular.module('noteSth');
-app.controller('register', ['$scope', 'dataS',
+app.controller('register', ['$scope', 'dataS', '$location',
 
-    function($scope, dataS) {
-       
+    function($scope, dataS, $location) {
+
         $scope.registerdo = function() {
-                dataS.postData('http://localhost:4000/api/user', $scope.login)
+                dataS.postData('/user', $scope.login)
                 .success(function(data) {
-                    console.log(data);
+                    $location.path('/dash');
                 })
-                
+
         }
     }
-]);  
+]);

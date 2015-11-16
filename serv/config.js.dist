@@ -10,7 +10,8 @@ var db = {
 // server setup
 server = {
     port: '4000',
-    secret: 'yourssecret'
+    secret: 'yourssecret',
+    reqCode: false
 },
 // mailer setup
 mail = {
@@ -24,7 +25,8 @@ module.exports = {
 	  port: server.port,
     dbUrl: 'mongodb://'+db.dbUser+':'+db.dbPassword+'@'+db.dbHost+':'+db.dbPort+'/'+db.dbName,
     secret: server.secret,
-    mail: mail
+    mail: mail,
+    serv: server
 };
 
 // db.createUser( { user: "noteSth", pwd: "test", roles: [ { role: "readWrite", db: "noteSth" } ] } )

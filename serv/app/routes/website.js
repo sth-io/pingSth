@@ -6,6 +6,8 @@ var app = require('../../app'),
   statusCodes = require('http').STATUS_CODES,
   request = require('request'),
 
+  conf = require('../../config.js'),
+
   sUser = require('../services/user'),
   auth = require('../services/auth'),
 
@@ -128,7 +130,7 @@ apiRoutes.route('/websites')
         request(req.body.website, function(error, response, body) {
           if (body) {
             var ison = body.indexOf('<div pingsth="' + cb._id + '" style="display:none"></div>');
-            if (ison >= 0) {
+            if (ison >= 0  || conf.serv.reqCode === false) {
               Websites.findOne({
                 website: req.body.website
               }, function(err, webs) {
