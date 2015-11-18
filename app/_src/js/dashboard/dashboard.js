@@ -134,7 +134,10 @@ app.controller('dashboard', ['$scope', 'dataS', '$cookieStore', '$location', '$r
       }
     }
 
-
+    var token = $cookieStore.get('token');
+    if(!token || token.length < 2) {
+              $location.path('/login');
+    }
 
 
 

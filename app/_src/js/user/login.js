@@ -1,7 +1,7 @@
 var app = angular.module('noteSth');
-app.controller('login', ['$scope', 'dataS', '$cookieStore', '$location',
+app.controller('login', ['$scope', 'dataS', '$cookieStore', '$location', '$rootScope',
 
-    function($scope, dataS, $cookieStore, $location) {
+    function($scope, dataS, $cookieStore, $location, $rootScope) {
       var token = $cookieStore.get('token');
        if(token && token.length > 2) {
           dataS.getData('/user', token)
@@ -18,8 +18,12 @@ app.controller('login', ['$scope', 'dataS', '$cookieStore', '$location',
                     if(data.token) {
                         $cookieStore.put('token', data.token);
                         $cookieStore.put('id', data.id);
+                        $rootScope.$emit( "userlogin", true);
                         $location.path('/dash');
                     }
+                })
+                .error(function(data) {
+                    $scope.msg = data.error;
                 })
 
         }

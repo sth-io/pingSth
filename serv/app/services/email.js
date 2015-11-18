@@ -22,7 +22,7 @@ handler = {
     }
     for (var i = 0, len = data.owner.length; i < len; i++) {
       var mailOptions = {
-        from: '« PingSth <' + config.email.user + '>', // sender address
+        from: '« PingSth <' + config.email.email + '>', // sender address
         to: data.owner[i], // list of receivers
         subject: '[PingSth] Website Alert', // Subject line
         text: 'Your website ' + data.website + ' has broke down', // plaintext body

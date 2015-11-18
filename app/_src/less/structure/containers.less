@@ -1,25 +1,23 @@
 .logo {
-    background-image: url('/_dist/img/logo_yw.svg');
+    background-image: url(/_dist/img/logo_yw.svg);
     .background-size(cover);
     .dims-rem(230,95);
     display: block;
     .marg-auto(0,20);
 }
-
 .box {
     background: #fff;
     border-radius: 2px;
     .padd(20,20,20,20);
 }
-
 header {
     background: #fff;
     position: fixed;
-    top: 0px;
-    left:0px;
+    top: 0;
+    left: 0;
     width: 100%;
     z-index: 8000;
-
+    border-bottom: 1px solid #D7D8DD;
     .icons {
         display: inline-block;
     }
@@ -32,10 +30,13 @@ header {
     max-height: 50px;
     .marg(10,20,5,20);
 }
-
 @keyframes modal {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 .note-modal {
     position: fixed;
@@ -45,7 +46,7 @@ header {
     width: 50%;
     left: 25%;
     animation-name: modal;
-    animation-duration: .5s;
+    animation-duration: 0.5s;
     background: #fff;
     overflow-x: hidden;
     overflow-y: auto;
@@ -63,17 +64,28 @@ header {
         color: #fff;
         .text-center;
         .padd(10,20,10,20);
-
     }
 }
-
 .website-box {
     .padd(0,0,20,0);
+    border-radius: 4px;
+    border: 1px solid #D7D8DD;
+    .info {
+        background: #F4F4F4;
+        .padd(10,20,10,20);
+        .font-size(12);
+        .text-center;
+        span {
+            .padd(0,10,0,10);
+        }
+    }
     .box-head {
-        .padd(5,5,5,75);
-        border-radius: 2px 2px 0 0;
-        background: #555;
-        color: #fff;
+        .padd(15,5,15,45);
+        border-radius: 4px 4px 0 0;
+        background: #E7E8EB;
+        border: 1px solid #E7E8EB;
+        border-bottom: 1px solid #D7D8DD;
+        color: #727D92;
         width: 100%;
         font-family: @f-light;
         table {
@@ -86,38 +98,89 @@ header {
         }
         h2 {
             .font-size(16);
+            font-family: @f-light;
+            display: inline-block;
+        }
+        .setup {
+            opacity: 0;
+            .transition(all .2s);
+            float: Right;
+            .padd(2);
+            span:before {
+                top: -4px;
+                position: absolute;
+            }
+            display: inline-block;
+            li {
+                display: inline-block;
+            }
+        }
+        &:hover {
+            .setup {
+                opacity: 1;
+            }
         }
     }
     .data {
-        opacity: .5;
+        opacity: 0.5;
         .font-size(10);
         font-family: arial;
         .padd(20);
     }
-}
 
+    &.s-false {
+        .error {
+            .marg();
+        }
+        border-color: #AE0202;
+        .box-head {
+            border-bottom:1px solid #AE0202;
+            color: #AE0202;
+        }
+    }
+    &.s-waiting {
+        .error {
+            .marg();
+            background: #F5BC1A;
+        }
+        border-color: #F5BC1A;
+        .box-head {
+            border-bottom: 1px solid #F5BC1A;
+            color: #F5BC1A;
+        }
+    }
+}
 .chart {
     width: 100%;
     height: 100px;
     .tick {
         .font-size(9);
-        opacity: .5 !important;
+        opacity: 0.5 !important;
         font-family: arial;
     }
     circle {
         fill: transparent !important;
         stroke: transparent !important;
     }
+    .ac-line {
+        stroke: #5294E2 !important;
+    }
     .domain {
-        opacity: .2 !important;
+        opacity: 0.2 !important;
     }
     .x.axis {
         display: none;
     }
 }
-
-    .opts {
-        .padd(0,30,0,30);
-        float:right;
-        cursor: pointer;
-    }
+.opts {
+    .padd(0,30,0,30);
+    float: right;
+    cursor: pointer;
+}
+.error {
+    background: #AE0202;
+    color: #fff;
+    .text-center;
+    .padd(10,20,10,20);
+    .marg(20);
+}

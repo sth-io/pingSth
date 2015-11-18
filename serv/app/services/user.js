@@ -10,24 +10,30 @@ var check = require('./../functions/checkReqKeys'),
 
 module.exports = {
     register: function(req, res) {
-        req.body.password = bcrypt.hashSync(req.body.password);
-        if (check(req.body, reqKey)) {
-            User.findOne({
-                email: req.body.email
-            }, function(err, fuser) {
-                if (!fuser) {
-                    req.body.dateAdded = new Date();
-                    req.body.status = 0;
-                    user = new User(req.body);
-                    user.save(function(err, usr) {
-                        if (err) res.status(400).json(err);
-                        res.status(200).json(usr);
-                    })
-                } else {
-                    res.status(400).json({
-                        error: 'email already in use'
-                    });
-                }
+        if (req.body.password && req.body.email) {
+            req.body.password = bcrypt.hashSync(req.body.password);
+            if (check(req.body, reqKey)) {
+                User.findOne({
+                    email: req.body.email
+                }, function(err, fuser) {
+                    if (!fuser) {
+                        req.body.dateAdded = new Date();
+                        req.body.status = 0;
+                        user = new User(req.body);
+                        user.save(function(err, usr) {
+                            if (err) res.status(400).json(err);
+                            res.status(200).json(usr);
+                        })
+                    } else {
+                        res.status(400).json({
+                            error: 'email already in use'
+                        });
+                    }
+                });
+            }
+        } else {
+            res.status(400).json({
+                error: 'You need to provide both email and password.'
             });
         }
     },
@@ -60,17 +66,15 @@ module.exports = {
 
             if (err) throw err;
             if (!user) {
-                res.json({
-                    success: false,
-                    message: 'Authentication failed. User not found.'
+                res.status(400).json({
+                    error: 'Authentication failed. User not found.'
                 });
             } else if (user) {
                 console.log(user.password)
-                // check if password matches
+                    // check if password matches
                 if (!bcrypt.compareSync(req.body.password, user.password)) {
-                    res.json({
-                        success: false,
-                        message: 'Authentication failed. Wrong password.'
+                    res.status(400).json({
+                        error: 'Authentication failed. Wrong password.'
                     });
                 } else {
 
