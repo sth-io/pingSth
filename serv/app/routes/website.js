@@ -126,7 +126,7 @@ apiRoutes.route('/websites')
   })
   .post(function(req, res) {
     auth(req, function(cb) {
-      if (cb) {
+      if (cb && req.body.website && req.body.timeout) {
         request(req.body.website, function(error, response, body) {
           if (body) {
             var ison = body.indexOf('<div pingsth="' + cb._id + '" style="display:none"></div>');

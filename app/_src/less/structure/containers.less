@@ -47,16 +47,25 @@ header {
     left: 25%;
     animation-name: modal;
     animation-duration: 0.5s;
-    background: #fff;
+
+    // background: #fff;
     overflow-x: hidden;
     overflow-y: auto;
     z-index: 9000;
-    .padd(20,20,20,20);
-    .box-shadow(0px 10px 23px 0px rgba(0,0,0,0.75));
+    .website-box {
+        .box-shadow(0px 10px 23px 0px rgba(0,0,0,0.75));
+        .padd();
+        .box-head {
+            .padd(15,5,15,5);
+        }
+    }
+
+    // .padd(20,20,20,20);
     h3 {
         .text-center;
     }
     .detect-code {
+        .marg(20);
         background: @c-darkg;
         font-family: @f-light;
         .font-size(12);
@@ -78,6 +87,10 @@ header {
         span {
             .padd(0,10,0,10);
         }
+    }
+    .box-body {
+        background: #fff;
+        .padd(20,20,40,20);
     }
     .box-head {
         .padd(15,5,15,45);
@@ -127,14 +140,13 @@ header {
         font-family: arial;
         .padd(20);
     }
-
     &.s-false {
         .error {
             .marg();
         }
         border-color: #AE0202;
         .box-head {
-            border-bottom:1px solid #AE0202;
+            border-bottom: 1px solid #AE0202;
             color: #AE0202;
         }
     }
