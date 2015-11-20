@@ -12,7 +12,7 @@ var app = require('../../app'),
   auth = require('../services/auth'),
 
   Websites = require('../models/website'),
-  Ping = require('../services/pinger'),
+  // Ping = require('../services/pinger'),
   Status = require('../models/status'),
   ObjectId = require('mongoose').Types.ObjectId;
 

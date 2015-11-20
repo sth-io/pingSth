@@ -10,15 +10,19 @@ var express     = require('express'),
     conf        = require('./config'),
     jwt         = require('jsonwebtoken'),
     morgan      = require('morgan'),
-    Init        = require('./app/services/init');
+    Init        = require('./app/services/init'),
+    path        = require('path');
 /**
  Connect to database
 **/
+
+require('http').globalAgent.maxSockets = Infinity
+
 mongoose.connect(conf.dbUrl);
 
 //define secret for token
 app.set('secret', conf.secret);
-
+app.set('dupa', 'dupa');
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 

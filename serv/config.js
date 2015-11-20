@@ -1,5 +1,7 @@
 // SERVER CONFIG
 // MongoDB setup
+var path = require('path');
+
 var db = {
     dbUser: 'ping',
     dbPassword: 'ping',
@@ -19,6 +21,12 @@ mail = {
   password: 'owslen69xD',
   type: 'gmail'
 }
+var rootPath = function() {
+    var root = path.dirname(require.main.filename),
+        idx = root.indexOf('/serv');
+    root = root.substr(0, idx + 5)+'/';
+    return root;
+}
 
 module.exports = {
     // port at which server listens
@@ -26,6 +34,8 @@ module.exports = {
     dbUrl: 'mongodb://'+db.dbUser+':'+db.dbPassword+'@'+db.dbHost+':'+db.dbPort+'/'+db.dbName,
     secret: server.secret,
     mail: mail,
+    rootPath: rootPath(),
+    srvcPath: rootPath()+'app/services/',
     serv: server
 };
 
