@@ -68,6 +68,21 @@ apiRoutes.route('/xstatus/:website/:qty')
     })
   });
 
+  apiRoutes.route('/websites/:id')
+    .get(function(req, res) {
+      auth(req, function(cb) {
+        if (cb) {
+          Websites.findOne({
+            owner: cb.email,
+            _id: new ObjectId(req.params.id)
+          }, function(err, data) {
+            res.status(200).json(data);
+          })
+        } else {
+          notoken(res);
+        }
+      })
+    })
 
 apiRoutes.route('/websites')
   .get(function(req, res) {

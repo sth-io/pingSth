@@ -1,32 +1,36 @@
 <div class="full-bg dash"></div>
 <div class="sth">
     <div class="sth-max-2 sth-6 sth-space" ng-repeat="web in websites track by $index">
-      <div class="box website-box sth" ng-class="{'s-false': getStat(web.website).status == false, 's-true': getStat(web.website).status == true, 's-waiting': getStat(web.website).status == null}">
-        <div class="box-head">
-          <h2>{{web.website.substr(web.website.indexOf('://')+3, web.website.length)}}</h2>
-          <ul class="setup">
-            <li><span class="opts o-edit" ng-click="sets.edit(web.website, $index)"></span></li>
-            <li><span class="opts o-del" ng-click="sets.delete(web.website, $index)"></span></li>
-          </ul>
-        </div>
-        <div class="sth-9">
-        <p class="error" ng-if="getStat(web.website).status == null">Loading website data. Please wait.</p>
-        <p class="error" ng-if="getStat(web.website).status == false">Website down!</p>
-            <div class="info">
-                <span>timeout: <b>{{web.timeout}}</b> min</span>
-                <span>response: <b>{{getStat(web.website).response}}</b> ms</span>
-                <span>screen: <a ng-href="{{server + web.website.substr(web.website.indexOf('://')+3, web.website.length)}}.png" target="_blank">[ click ]</a></span>
+        <div class="box website-box sth" ng-class="{'s-false': getStat(web.website).status == false, 's-true': getStat(web.website).status == true, 's-waiting': getStat(web.website).status == null}">
+            <div class="box-head">
+                <h2><a ng-href="/page/{{web._id}}">{{web.website.substr(web.website.indexOf('://')+3, web.website.length)}}</a></h2>
+                <ul class="setup">
+                    <li>
+                        <span class="opts o-edit" ng-click="sets.edit(web.website, $index)"></span>
+                    </li>
+                    <li>
+                        <span class="opts o-del" ng-click="sets.delete(web.website, $index)"></span>
+                    </li>
+                </ul>
             </div>
+            <div class="sth-9">
+                <p class="error" ng-if="getStat(web.website).status == null">Loading website data. Please wait.</p>
+                <p class="error" ng-if="getStat(web.website).status == false">Website down!</p>
+                <div class="info">
+                    <span>timeout: <b>{{web.timeout}}</b> min</span>
+                    <span>response: <b>{{getStat(web.website).response}}</b> ms</span>
+                    <span>screen: <a ng-href="{{server + web.website.substr(web.website.indexOf('://')+3, web.website.length)}}.png" target="_blank">[ click ]</a></span>
+                </div>
 
-          <p ng-if="getStat(web.website).status" class="data text-center">response time [ms]</p>
-          <p ng-if="!getStat(web.website).status" class="data text-center">no data gathered, yet.</p>
-          <div ng-if="getStat(web.website).status"  data-ac-chart="'line'" data-ac-config="chartconf" data-ac-data="responses[web.website]"  class="chart">
-          </div>
+                <p ng-if="getStat(web.website).status" class="data text-center">response time [ms]</p>
+                <p ng-if="!getStat(web.website).status" class="data text-center">no data gathered, yet.</p>
+                <div ng-if="getStat(web.website).status" data-ac-chart="'line'" data-ac-config="chartconf" data-ac-data="responses[web.website]" class="chart">
+                </div>
+            </div>
+            <!-- <div class="col-md-2 text-center"><img ng-src="" class="screenshot" alt=""></div> -->
+
+            <!-- <i class="status" ng-class="{'s-false': getStat(web.website).status == false, 's-true': getStat(web.website).status == true, 's-waiting': getStat(web.website).status == null}"></i> -->
         </div>
-        <!-- <div class="col-md-2 text-center"><img ng-src="" class="screenshot" alt=""></div> -->
-
-        <!-- <i class="status" ng-class="{'s-false': getStat(web.website).status == false, 's-true': getStat(web.website).status == true, 's-waiting': getStat(web.website).status == null}"></i> -->
-      </div>
     </div>
 
 </div>

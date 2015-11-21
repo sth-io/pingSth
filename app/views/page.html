@@ -1,0 +1,40 @@
+<div class="sth">
+    <div class="sth-2 sth-space">
+        <div class="website-box">
+            <div class="box-head">
+                <h2>{{website.website}}</h2>
+            </div>
+            <p class="info">
+                basic data
+            </p>
+            <div class="box-body">
+                <ul class="li">
+                    <li> Check each: {{website.timeout}}ms</li>
+                    <li> Total pings: {{website.total}}</li>
+                </ul>
+            </div>
+            <div class="uptime acs-{{acessibility}}">
+                <h2> {{website.up/(website.up+website.down)*100}}%</h2>
+                <span>availability</span>
+                <div class="sth">
+                    <div class="sth-1">
+                        {{website.up}} UP
+                    </div>
+                    <div class="sth-1">
+                        {{website.down}} DO
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sth-6 sth-space">
+        <div class="website-box">
+            <div class="box-head">
+                Response times
+            </div>
+            <div class="box-body">
+                <div data-ac-chart="'line'" data-ac-config="chartconf" data-ac-data="responses" class="chart">
+                </div>
+            </div>
+        </div>
+    </div>

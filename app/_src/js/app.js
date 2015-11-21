@@ -13,6 +13,10 @@ angular.module('noteSth', [
             templateUrl: '/views/register.html',
             controller: 'register'
         })
+        .when('/page/:id', {
+            templateUrl: '/views/page.html',
+            controller: 'page'
+        })
         .when('/dash', {
             templateUrl: '/views/dash.html',
             controller: 'dashboard'
